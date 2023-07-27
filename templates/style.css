@@ -1,0 +1,165 @@
+*, ::before, ::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+  font-family: 'ChelaOne';
+  src: url('fonts/ChelaOne.ttf') format('truetype');
+  font-family: 'SansitaOne';
+  src: url('fonts/SansitaOne.ttf') format('truetype');
+}
+
+body{
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #F2C557;
+}
+
+/* HEADER */
+
+
+header{
+  background-image: url('img/header.png');
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+  color: white;
+}
+
+/* contacts du haut */
+  
+.contact-item{
+  margin: 20px;
+  font-size: 18px;
+}
+  
+.icon{
+  width: 20px;
+  height: 20px;
+}
+  
+.address a{
+  color: white;
+}
+
+/* nom du magasin */
+
+.header-content{
+  margin-left: 240px;
+}
+
+h1{
+  font-size: 60px;
+  font-family: 'SansitaOne';
+}
+
+.header-search-icons p{
+  font-family: 'SansitaOne';
+  font-size: 30px;
+  color: #FFB320;
+  margin: 0px 0px -16px;
+  
+}
+
+/* barre de recherche et icons */
+
+.search-bar {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+}
+.search-bar input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+.search-bar input::placeholder {
+  color: #888; 
+  font-style: italic;
+}
+.search-bar img{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  right: 5px; 
+  transform: translateY(-50%); 
+  cursor: pointer;
+}
+
+.icons{
+  width: 40px;
+  height: 40px;
+}
+.search-bar, .icons{
+  margin-right: 20px;
+}
+
+
+/* MENU */
+
+.menu-box{
+  height: 100%;
+  width: 80%;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+.menu-title{
+  
+  height: 40px;
+  background-color: #B33826;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2{
+  font-size: 22px;
+  color: white;
+  text-align: center;
+}
+.menu-list li{
+  list-style: none;
+  margin: 15px;
+}
+
+
+/* CONTENT */
+
+.main-content{
+  background-color: rgb(201, 117, 201);
+}
+
+.product-card{
+  max-width: 240px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+.card-img-top{
+  border-radius: 5px 5px 0 0;
+}
+
+.btn-card{
+  width: 100%;
+  height: 40px;
+  background-color: #B33826;
+  color: white;
+  font-weight: 700;
+  border: none;
+}
+
+/* FOOTER */
+
+footer{
+
+  background-color: #B33826;
+ 
+}
