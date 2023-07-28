@@ -11,10 +11,11 @@
   
   <!-- HEADER -->
   
-  <div class="row mb-3">
+<header>
+
+  <div class="row mb-4">
     <div class="col-md-12">
-      <header>
-        
+          
         <div class="contact-info d-flex justify-content-end">
           <span class="contact-item">
             <img src="img/icons8-location-48.png" class="icon" alt="geolocation">
@@ -48,18 +49,20 @@
           </div>
   
         </div>
-      </header>   
+        
     </div>
   </div>
-  
+
+</header>  
+
   <!-- NAV-MENU -->
   
-  <div class="row mb-3">
+  <div class="row mb-4">
+    
         <div class="col-md-3">
-          <nav class="menu">
-            <div class="menu-box">
+          <nav class="menu-box">
               <div class="menu-title">
-                <h2>Каталог продуктов</h2>
+                <h2 class="fw-bold">Каталог продуктов</h2>
               </div>
               <ul class="menu-list">
                 <li>Хлеб</li>
@@ -79,100 +82,114 @@
                 <li>Сувениры и подарки</li>
                 <li>Косметика</li>
               </ul>
-            </div>
           </nav>
         </div>
         
         <!-- CONTENT -->
         
-        <div class="col-md-9">
+        <div class="col-md-9 bg-primary">  <!--colonne de contenu-->
 
-          <section class="main-content">
-            <h3>ПОПУЛЯРНЫЕ ТОВАРЫ</h3>
-
-            <div class="row">
-
-              <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                  <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
-                  <div class="product-details p-2">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
-                    <div class="product-price text-center fw-bold">1,50€</div>
-                  </div>
-                  <div class="product-logo-details d-flex p-2">
-                    <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-                    <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
-                    <span>2</span>
-                    <a href=""><img src="img/plus-red24.png" alt=""></a>
-                  </div>
-                  <button class="btn-card">Добавить в корзину</button>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                  <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
-                  <div class="product-details p-2">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
-                    <div class="product-price text-center fw-bold">1,50€</div>
-                  </div>
-                  <div class="product-logo-details d-flex p-2">
-                    <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-                    <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
-                    <span>2</span>
-                    <a href=""><img src="img/plus-red24.png" alt=""></a>
-                  </div>
-                  <button class="btn-card">Добавить в корзину</button>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                  <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
-                  <div class="product-details p-2">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
-                    <div class="product-price text-center fw-bold">1,50€</div>
-                  </div>
-                  <div class="product-logo-details d-flex p-2">
-                    <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-                    <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
-                    <span>2</span>
-                    <a href=""><img src="img/plus-red24.png" alt=""></a>
-                  </div>
-                  <button class="btn-card">Добавить в корзину</button>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                  <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
-                  <div class="product-details p-2">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
-                    <div class="product-price text-center fw-bold">1,50€</div>
-                  </div>
-                  <div class="product-logo-details d-flex p-2">
-                    <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-                    <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
-                    <span>2</span>
-                    <a href=""><img src="img/plus-red24.png" alt=""></a>
-                  </div>
-                  <button class="btn-card">Добавить в корзину</button>
-                </div>
-              </div>
-
-            </div>
-
-            <h4>В нашем магазине представлен широкий аасортимент товаров из разных стран</h4>
-            <div class="lands">
-
-            </div>
-
-          </section>
-
-        </div>     
+        <section>
           
+          <h3 class="text-center fw-bold pb-5">ПОПУЛЯРНЫЕ ТОВАРЫ</h3>
+          
+          <div class="cards-box d-flex justify-content-evenly">
+            
+            <div class="product-card">
+              <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
+              <div class="product-details p-2">
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
+                <div class="product-price text-center fw-bold">1,50€</div>
+              </div>
+              <div class="product-logo-details d-flex p-2">
+                <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
+                <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+                <span>2</span>
+                <a href=""><img src="img/plus-red24.png" alt=""></a>
+              </div>
+              <button class="btn-card">Добавить в корзину</button>
+            </div>
+             
+            <div class="product-card">
+              <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
+              <div class="product-details p-2">
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
+                <div class="product-price text-center fw-bold">1,50€</div>
+              </div>
+              <div class="product-logo-details d-flex p-2">
+                <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
+                <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+                <span>2</span>
+                <a href=""><img src="img/plus-red24.png" alt=""></a>
+              </div>
+              <button class="btn-card">Добавить в корзину</button>
+            </div>
+      
+            <div class="product-card">
+              <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
+              <div class="product-details p-2">
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
+                <div class="product-price text-center fw-bold">1,50€</div>
+              </div>
+              <div class="product-logo-details d-flex p-2">
+                <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
+                <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+                <span>2</span>
+                <a href=""><img src="img/plus-red24.png" alt=""></a>
+              </div>
+              <button class="btn-card">Добавить в корзину</button>
+            </div>
+    
+            <div class="product-card">
+              <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top">
+              <div class="product-details p-2">
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit, 200mg</p>
+                <div class="product-price text-center fw-bold">1,50€</div>
+              </div>
+              <div class="product-logo-details d-flex p-2">
+                <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
+                <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+                <span>2</span>
+                <a href=""><img src="img/plus-red24.png" alt=""></a>
+              </div>
+              <button class="btn-card">Добавить в корзину</button>
+            </div>
 
-    </div>
+          </div>
+          
+          <h4 class="p-5">В нашем магазине представлен широкий аасортимент товаров из разных стран</h4>
+          
+          <div class="lands d-flex justify-content-evenly">
+            
+            <div class="land">
+              <img src="img/Armenia.png" alt="">
+              <p>Армения</p>
+            </div>
+
+            <div class="land">
+              <img src="img/Belarus.png" alt="">
+              <p>Беларусь</p>
+            </div>
+
+            <div class="land">
+              <img src="img/Georgia.png" alt="">
+              <p>Грузия</p>
+            </div>
+
+            <div class="land">
+              <img src="img/Russia.png" alt="">
+              <p>Россия</p>
+            </div>
+
+            <div class="land">
+              <img src="img/Ukraine.png" alt="">
+              <p>Украина</p>
+            </div>
+
+          </div>
+
+        </section>
+        </div>
   </div>
   
       <!-- FOOTER -->
