@@ -14,15 +14,14 @@
 }
 
 body{
-
+  width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #F2C557;
 }
 
 /* HEADER */
 
-
-header{
+.header{
   background-image: url('img/header.png');
   width: 100%;
   height: 30vh;
@@ -175,5 +174,20 @@ h2{
 footer{
 
   background-color: #B33826;
+  color: white;
  
+}
+.footer h6{
+  font-weight: bold;
+}
+.footer-info img{
+  width: 50px;
+  height: 50px;
+}
+
+.line{
+  width: 500px;
+  height: 1px;
+  background-color: #FFB320;
+  margin: 0 auto;
 }
