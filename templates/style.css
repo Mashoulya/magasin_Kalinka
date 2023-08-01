@@ -1,7 +1,8 @@
-*, ::before, ::after{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+:root {
+  --color-gold: #F2C557;
+  --color-red: #B33826;
+  --color-white: white;
+  --color-grey: #888;
 }
 
 @font-face {
@@ -13,10 +14,16 @@
   src: url('fonts/Pattaya.ttf') format('truetype');
 }
 
+*, ::before, ::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body{
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #F2C557;
+  background-color: var(--color-gold);
 }
 
 /* HEADER */
@@ -26,7 +33,7 @@ body{
   width: 100%;
   height: 30vh;
   background-size: cover;
-  color: white;
+  color: var(--color-white);
 }
 
 /* contacts du haut */
@@ -42,7 +49,7 @@ body{
 }
   
 .address a{
-  color: white;
+  color: var(--color-white);
 }
 
 /* nom du magasin */
@@ -68,7 +75,7 @@ h1{
   position: relative;
   width: 400px;
   height: 40px;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 5px;
 }
 .search-bar input{
@@ -80,7 +87,7 @@ h1{
   padding-left: 5px;
 }
 .search-bar input::placeholder {
-  color: #888; 
+  color: var(--color-grey); 
   font-style: italic;
 }
 .search-bar img{
@@ -106,13 +113,13 @@ h1{
   height: 40px;
   background-color: #000000;
   border: 3px solid #ffffff;
-  color: white;
+  color: var(--color-white);
   position: absolute;
   right: 10px;
 }
 .login-register a{
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }
 
 /* MENU */
@@ -120,14 +127,14 @@ h1{
 .menu-box{
   width: 80%;
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 5px 5px 0 0;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 .menu-title{
   
   height: 40px;
-  background-color: #B33826;
+  background-color: var(--color-red);
   border-radius: 5px 5px 0 0;
   display: flex;
   align-items: center;
@@ -135,7 +142,7 @@ h1{
 }
 h2{
   font-size: 22px;
-  color: white;
+  color: var(--color-white);
   text-align: center;
 }
 .menu-list li{
@@ -177,8 +184,8 @@ h2{
 .btn-card{
   width: 100%;
   height: 40px;
-  background-color: #B33826;
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-white);
   font-weight: 700;
   border: none;
 }
@@ -228,8 +235,8 @@ h2{
 
 footer{
 
-  background-color: #B33826;
-  color: white;
+  background-color: var(--color-red);
+  color: var(--color-white);
   padding: 10px;
  
 }
@@ -247,4 +254,68 @@ footer{
   height: 1px;
   background-color: #FFB320;
   margin: 0 auto;
+}
+
+
+/* CONNEXION FORM */
+
+.connexion-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid var(--color-red);
+  border-radius: 5px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.form-group input::placeholder {
+  color: var(--color-grey);
+  font-size: 14px; 
+}
+
+.form-group-under{
+  font-size: 14px;
+}
+
+.formCheck input{
+  margin-right: 5px;
+  width: 15px;
+}
+
+.text-right a{
+  text-decoration: none;
+  color: var(--color-red);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-red);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles responsives */
+@media screen and (max-width: 430px) {
+ .form-group-under{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+ }
 }
