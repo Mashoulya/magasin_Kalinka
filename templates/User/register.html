@@ -17,37 +17,57 @@
             
             <div class="col-md-12 col-lg-6">
                 
-                <h4 class="text-center">CONNEXION</h4>
+                <h4 class="text-center">INSCRIPTION</h4>
+
                 <form class="login-register-form">
-                    
-                    <div class="form-group">
-                        <label for="usernameEmail">Nom ou Email</label>
-                        <input type="text" id="usernameEmail" placeholder="Entrez votre nom ou email">
+                   
+                    <div class="form-group-over d-flex">
+                        <div class="form-group first-name">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" placeholder="Entrez votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom</label>
+                            <input type="text" id="lastName" placeholder="Entrez votre nom">
+                        </div>
                     </div>
         
+                    <!-- 2ème ligne: Téléphone -->
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" placeholder="Entrez votre numéro de téléphone">
+                    </div>
+        
+                    <!-- 3ème ligne: Mail -->
+                    <div class="form-group">
+                        <label for="email">Mail</label>
+                        <input type="email" id="email" placeholder="Entrez votre adresse e-mail">
+                    </div>
+        
+                    <!-- 4ème ligne: Mot de passe -->
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
                         <input type="password" id="password" placeholder="Entrez votre mot de passe">
                     </div>
-                    
+        
+                    <!-- 5ème ligne: Confirmation de mot de passe -->
                     <div class="form-group">
-                        <button type="submit">Se connecter</button>
+                        <label for="confirmPassword">Confirmation de mot de passe</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirmez votre mot de passe">
                     </div>
         
-                    <div class="form-group-under d-flex justify-content-between">
-                        <div class="formCheck d-flex justify-content-start align-middle">
-                            <input type="checkbox" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
-                        </div>
-                        
-                        <div class="text-right">
-                            <a href="#">Mot de passe oublié?</a>
-                        </div>
+                    <!-- 6ème ligne: Bouton de soumission -->
+                    <div class="form-group">
+                        <button type="submit">S'inscrire</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
+
+
+
 
 
 

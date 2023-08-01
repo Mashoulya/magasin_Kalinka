@@ -257,9 +257,11 @@ footer{
 }
 
 
-/* CONNEXION FORM */
+/* LOGIN / REGISTER FORM */
 
-.connexion-form {
+/* login */
+
+.login-register-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -270,7 +272,7 @@ footer{
   border-radius: 5px;
 }
 
-.form-group {
+.form-group{
   width: 100%;
   margin-bottom: 20px;
 }
@@ -311,11 +313,22 @@ button {
   cursor: pointer;
 }
 
-/* Styles responsives */
+/* register */
+
+.form-group-over .first-name{
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 430px) {
  .form-group-under{
   display: flex;
   flex-direction: column;
   justify-content:space-between;
  }
+ .form-group-over{
+  display: flex;
+  flex-direction: column;justify-content: space-between;
+ }
 }
+
+
