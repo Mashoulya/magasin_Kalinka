@@ -336,7 +336,7 @@ footer{
 
 .cart-item {
   display: grid;
-  grid-template-columns: 100px 1fr auto auto auto;
+  grid-template-columns: 100px auto auto auto auto;
   align-items: center;
   gap: 20px;
   border-radius: 5px;
@@ -358,17 +358,17 @@ footer{
   width: 30px;
   margin-right: 20px;
 }
+.delete-icon img{
+  width: 30px;
+}
   
   
   /* les commandes du panier responsives */
  @media (max-width: 990px) {
   .cart-item {
-      grid-template-columns: 100px auto auto auto auto;
+      grid-template-columns: 100px auto auto;
       grid-template-rows: 80px auto auto;
       gap: 10px;
-  }
-  .cart-item p{
-    font-size: 14px;
   }
   .quantity-item {
     grid-row: 2;
@@ -381,6 +381,34 @@ footer{
     grid-row: 2;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .cart-item {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    text-align: left; /* Выравнивание текста по правому краю */
+  }
+
+  .quantity-item {
+    grid-row: 2;
+    gap: 5px;
+  }
+
+  .total-price-item {
+    grid-row: 2;
+    text-align: center; /* Выравнивание текста по левому краю */
+  }
+
+  .delete-icon {
+    grid-row: 2;
+    text-align: center; /* Выравнивание иконки удаления по левому краю */
+  }
+  .cart-item p,  span{
+    font-size: 12px;
+  }
+}
+
 
 .total-price-cart{
   width: 340px;
@@ -398,6 +426,21 @@ footer{
   border-radius: 5px;
   background-color: var(--color-gold);
   text-transform: uppercase;
+}
+
+@media screen and (max-width:380px){
+  .total-price-cart{
+    width: 250px;
+    height: 120px;
+  }
+  .total-price p, span,
+  .pay-btn{
+    font-size: 12px;
+  }
+  .pay-btn{
+  padding: 5px;
+  border: none;
+  }
 }
 
 /* COMMANDES */
