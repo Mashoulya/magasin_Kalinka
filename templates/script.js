@@ -14,3 +14,5 @@ cardsBox.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+

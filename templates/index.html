@@ -17,34 +17,41 @@
       <div class="header mb-4">
         <div class="contact-info d-flex justify-content-end">
           <span class="contact-item">
-            <img src="img/icons8-location-48.png" class="icon" alt="geolocation">
+            <img class="localis-icon" src="img/icons8-location-48.png" alt="geolocation">
             <span class="address d-inline align-middle">
-              <a href="https://www.google.com/maps/place/50+Bd+Jean+Mermoz,+35136+Saint-Jacques-de-la-Lande/@48.0953112,-1.6990676,17z/data=!3m1!4b1!4m6!3m5!1s0x480ee077cb19bc11:0xaf2190f0a97d4862!8m2!3d48.0953076!4d-1.6964927!16s%2Fg%2F11h56b_9_x?authuser=0&entry=ttu" target="_blank">50 бул. Жан Мермоз, 35136 Сен-Жак-де-ла-Ланд</a>
+              <a href="https://www.google.com/maps/place/50+Bd+Jean+Mermoz,+35136+Saint-Jacques-de-la-Lande/@48.0953112,-1.6990676,17z/data=!3m1!4b1!4m6!3m5!1s0x480ee077cb19bc11:0xaf2190f0a97d4862!8m2!3d48.0953076!4d-1.6964927!16s%2Fg%2F11h56b_9_x?authuser=0&entry=ttu" target="_blank">50 Bd Jean Mermoz, 35136 Saint-Jacques-de-la-Lande</a>
             </span>
           </span>
-          <span class="contact-item">Horaires d'ouverture: Mardi - Dimanche, de 10:00 à 20:00</span>
+          <span class="contact-item">Mardi - Dimanche, de 10:00 à 20:00</span>
           <span class="contact-item">01 02 03 04 05</span>
         </div>
         
         <div class="header-content d-flex flex-column justify-content-right">
+
           <h1>Kalinka</h1>
+
           <div class="header-search-icons d-flex justify-content-beteween">
             <p class="me-auto">Épicerie et saveurs des pays de l'est</p>
-            <div class="search-bar">
-              <input type="text" id="search-input" placeholder="Rechercher">
+
+            <div class="search-icons d-flex justify-content-between">
+              <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Rechercher">
+                <div>
+                  <img src="img/icons8-search-60.png" alt="search">
+                </div>
+              </div>
               <div>
-                <img src="img/icons8-search-60.png" alt="search">
+                <a href="">
+                  <img src="img/icons8-heart-60.png" alt="" class="icons">
+                </a>
+                <a href="" >
+                  <img src="img/icons8-user-48.png" alt="" class="icons">
+                </a>
+                <a href="" >
+                  <img src="img/icons8-shopping-cart-60.png" alt="" class="icons">
+                </a>
               </div>
             </div>
-            <a href="">
-              <img src="img/icons8-heart-60.png" alt="" class="icons">
-            </a>
-            <a href="" >
-              <img src="img/icons8-user-48.png" alt="" class="icons">
-            </a>
-            <a href="" >
-              <img src="img/icons8-shopping-cart-60.png" alt="" class="icons">
-            </a>
           </div>
 
         </div>
@@ -57,12 +64,17 @@
   </div> -->
 
 
-  <!-- NAV-MENU -->
+<!-- NAV-MENU -->
   
-<div class="container-fluid">
-    <div class="row mb-4">
+<div class="container-fluid d-flex">
+    <!-- <div class="row mb-4"> -->
+
+      <div class="burger-icon" onclick="toggleMenu()">
+        <img src="img/icon-menu-burger30.png" alt="">
+      </div>
       
-          <div class="col-md-3 bg-success">
+          <!-- <div class="menu-nav col-md-3 bg-success"> -->
+
             <nav class="menu-box">
                 <div class="menu-title">
                   <h2 class="fw-bold">Каталог продуктов</h2>
@@ -86,11 +98,11 @@
                   <li>Косметика</li>
                 </ul>
             </nav>
-          </div>
+          <!-- </div> -->
           
           <!-- CONTENT -->
           
-          <div class="col-md-9">  <!--colonne de contenu-->
+          <!-- <div class="content col-md-9">   -->
   
           <section class="cards-container">
             
@@ -211,9 +223,9 @@
             </div>
   
           </section>
-          </div>
-    </div>
-</div class="container-fluid">
+          <!-- </div> -->
+    <!-- </div> -->
+</div>
   
       <!-- FOOTER -->
   
