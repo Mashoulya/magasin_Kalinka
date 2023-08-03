@@ -16,3 +16,11 @@ cardsBox.forEach((item, i) => {
 })
 
 
+function toggleMenu() {
+    var menuBox = document.getElementById("menu-box");
+    if (menuBox.style.display === "none" || menuBox.style.display === "") {
+      menuBox.style.display = "block";
+    } else {
+      menuBox.style.display = "none";
+    }
+  }
