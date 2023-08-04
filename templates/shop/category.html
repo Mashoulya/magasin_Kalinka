@@ -9,45 +9,52 @@
 </head>
 <body>
 
-
-<div class="container-fluid">
-    <div class="row mb-4">
-      
-          <div class="col-md-3 bg-success">
-            <nav class="menu-box">
-                <div class="menu-title">
-                  <h2 class="fw-bold">Каталог продуктов</h2>
-                </div>
-                <ul class="menu-list">
-                  <li>Хлеб</li>
-                  <li>Молочные продукты</li>
-                  <li>Мясо и колбасы</li>
-                  <li>Рыба</li>
-                  <li>Фрукты и овощи</li>
-                  <li>Замороженные продукты</li>
-                  <li>Консервы и консервированные продукты</li>
-                  <li>Сыры</li>
-                  <li>Бакалея</li>
-                  <li>Кондитерские изделия</li>
-                  <li>Напитки</li>
-                  <li>Алкоголь</li>
-                  <li>Закуски</li>
-                  <li>Соусы, специи и приправы</li>
-                  <li>Сувениры и подарки</li>
-                  <li>Косметика</li>
-                </ul>
-            </nav>
-          </div>
+  <div class="burger-icon" onclick="toggleMenu()">
+    <img src="../img/icon-menu-burger30.png" alt="">
+  </div>
+    
+  <div class="container-fluid d-flex mb-4">
+    
+    <nav id="menu-box" class="menu-box">
+      <div class="menu-title d-flex align-items-center justify-content-center">
+        <h2 class="fw-bold">Каталог продуктов</h2>
+      </div>
+      <ul class="menu-list">
+        <li>Хлеб</li>
+        <li>Молочные продукты</li>
+        <li>Мясо и колбасы</li>
+        <li>Рыба</li>
+        <li>Фрукты и овощи</li>
+        <li>Замороженные продукты</li>
+        <li>Консервы и консервированные продукты</li>
+        <li>Сыры</li>
+        <li>Бакалея</li>
+        <li>Кондитерские изделия</li>
+        <li>Напитки</li>
+        <li>Алкоголь</li>
+        <li>Закуски</li>
+        <li>Соусы, специи и приправы</li>
+        <li>Сувениры и подарки</li>
+        <li>Косметика</li>
+      </ul>
+      <div class="menu-end">
+        <div class="menu-title-end d-flex justify-content-center align-items-center">
+          <h2 class="fw-bold">Contact</h2>
+        </div>    
+        <p>0102030405</p>
+        <p>azertyuiop@gmail.com</p>
+        <p>50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</p>
+      </div>
+    </nav>
+    
           
           <!-- CONTENT -->
-          
-          <div class="col-md-9">  <!--colonne de contenu-->
-  
+        
           <section class="">
             
             <h3 class="text-center fw-bold mb-5">Produits populaires</h3>
 
-            <div class="cards d-flex flex-wrap justify-content-between">
+            <div class="cards-box d-flex flex-wrap justify-content-center">
 
               <div class="product-card mb-3">
                 <img src="../img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
@@ -127,11 +134,11 @@
             </div>
   
           </section>
-          </div>
-    </div>
+          
+   
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

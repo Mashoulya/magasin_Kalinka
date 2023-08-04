@@ -178,7 +178,18 @@ h1{
   background-color: var(--color-red);
   border-radius: 5px 5px 0 0;
 }
-.menu-title h2{
+.menu-end{
+  display: none;
+}
+.menu-end p{
+  text-align: left;
+  margin-left: 20px;
+}
+.menu-title-end{
+  height: 45px;
+  background-color: var(--color-red);
+}
+h2{
   font-size: 18px;
   color: var(--color-white);
   text-align: center;
@@ -199,6 +210,15 @@ h1{
   .burger-icon{
     display: block;
     margin-left: 20px;
+  }  
+}
+@media screen and (max-width:500px){
+  .menu-end{
+    display: block;
+  }
+  .menu-box{
+    height: 100vh;
+    overflow: scroll;
   }  
 }
 
@@ -320,6 +340,44 @@ footer{
   margin: 0 auto;
 }
 
+@media screen and (max-width:660px) {
+  .footer h6{
+    font-size: 16px;
+  }
+  .footer p{
+    font-size: 14px;
+  }
+  .footer-info img{
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .footer-info,
+  .line{
+    display: none;
+  }
+}
+
+.txt-warning{
+  text-shadow:4px 0px 4px rgb(99, 202, 250);
+  animation: Warning 7s infinite;
+}
+
+@keyframes Warning{
+  0%, 20%, 40%, 50%, 80%, 100% {
+    text-shadow:
+      0 0 1px  rgb(99, 202, 250),
+      0 0 2px  rgb(99, 202, 250),
+      0 0 5px  rgb(99, 202, 250),
+      0 0 11px rgb(99, 202, 250),
+      0 0 20px rgb(99, 202, 250);
+  }
+  30%, 60%, 90% {       
+    text-shadow: none;
+  }
+}
 
 /* LOGIN / REGISTER FORM */
 
