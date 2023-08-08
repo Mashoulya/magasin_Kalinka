@@ -3,6 +3,7 @@
   --color-red: #B33826;
   --color-white: white;
   --color-grey: #888;
+  --color-orange: #FFB320;
 }
 
 @font-face {
@@ -66,7 +67,7 @@ h1{
 .header-search-icons p{
   font-family: 'SansitaOne';
   font-size: 28px;
-  color: #FFB320;  
+  color: var(--color-orange);  
 }
 
 /* barre de recherche et icons */
@@ -206,36 +207,41 @@ h1{
 
 .menu-box{
   width: 280px;
+  height: 100%;
   margin-left: 30px;
   background-color: var(--color-white);
   border-radius: 5px 5px 0 0;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
-.menu-title{
-  height: 45px;
-  background-color: var(--color-red);
-  border-radius: 5px 5px 0 0;
-}
-.menu-end{
-  display: none;
-}
-.menu-end p{
-  text-align: left;
-  margin-left: 20px;
-}
+.menu-title,
 .menu-title-end{
   height: 45px;
   background-color: var(--color-red);
+}
+.menu-title{
+  border-radius: 5px 5px 0 0;
+}
+.menu-box ul,
+.menu-end ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-box li{
+  cursor: pointer;
+  padding: 15px;
+}
+.menu-box li:hover{
+  color: var(--color-orange);
+  font-weight: bold;
+}
+.menu-end{
+  display: none;
 }
 h2{
   font-size: 18px;
   color: var(--color-white);
   text-align: center;
-}
-
-.menu-list li{
-  list-style: none;
-  margin: 10px;
 }
 
 @media screen and (max-width: 800px) {
@@ -274,7 +280,7 @@ h3{
   margin: 0px 40px 0px 40px;
 }
 .cards-box{
-  padding: 0 3vw;
+  padding: 10px 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
@@ -311,7 +317,7 @@ h3{
   height: 30px;
   background-color:#b3392671;
   position: absolute;
-  top: 40%;
+  top: 30%;
   cursor: pointer;
   z-index: 9;
 }
@@ -374,7 +380,7 @@ footer{
 .line{
   width: 500px;
   height: 1px;
-  background-color: #FFB320;
+  background-color: var(--color-orange);
   margin: 0 auto;
 }
 
@@ -492,7 +498,7 @@ footer{
 
 .cart-item {
   display: grid;
-  grid-template-columns: 100px auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   align-items: center;
   gap: 20px;
   border-radius: 5px;
@@ -501,13 +507,10 @@ footer{
 }
   
 .img-item {
-  width: 100%;
+  width: 100px;
   height: 80px;
   object-fit: cover;
-}
-  
-.quantity-item{
-  gap: 5px;
+  align-self: first baseline;
 }
   
 .delete-icon{
@@ -521,50 +524,49 @@ footer{
   
   /* les commandes du panier responsives */
  @media (max-width: 990px) {
-  .cart-item {
-      grid-template-columns: 100px auto auto;
-      grid-template-rows: 80px auto auto;
-      gap: 10px;
+  .img-item{
+    grid-area: 1/1/2/2;
+  }   
+  .product-info{
+    grid-area: 1/2/2/6;
   }
   .quantity-item {
-    grid-row: 2;
-  }
+    grid-area: 2/1/3/2;
+  }  
   .total-price-item {
-    grid-row: 2;
+    grid-area: 2/2/3/3;
     text-align: left;
-  }
-  .delete-icon{
-    grid-row: 2;
+  }  
+  .delete-icon {
+    grid-area: 2/5/3/6;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .cart-item {
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 10px;
-    text-align: left; /* Выравнивание текста по правому краю */
+  .img-item{
+    grid-area: 1/1/2/2;
+    width: 80px;
+    height: 60px;
+  }   
+  .product-info{
+    grid-area: 1/2/2/6;
   }
-
   .quantity-item {
-    grid-row: 2;
-    gap: 5px;
-  }
-
+    grid-area: 2/1/3/2;
+  }  
   .total-price-item {
-    grid-row: 2;
-    text-align: center; /* Выравнивание текста по левому краю */
-  }
-
+    grid-area: 2/2/3/5;
+    font-size: 10px;
+  }  
   .delete-icon {
-    grid-row: 2;
-    text-align: center; /* Выравнивание иконки удаления по левому краю */
+    grid-area: 2/4/3/6;
+    justify-self: right;
+    margin-right: 10px;
   }
   .cart-item p,  span{
     font-size: 12px;
   }
 }
-
 
 .total-price-cart{
   width: 340px;
@@ -586,8 +588,8 @@ footer{
 
 @media screen and (max-width:380px){
   .total-price-cart{
-    width: 250px;
-    height: 120px;
+    width: 220px;
+    height: 100px;
   }
   .total-price p, span,
   .pay-btn{
