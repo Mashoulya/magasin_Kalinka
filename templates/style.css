@@ -100,16 +100,15 @@ h1{
   cursor: pointer;
 }
 
-.icons{
+.profil-icons img{
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
-.search-bar, .icons{
+.search-bar, .profil-icons img{
   margin-right: 20px;
 }
-.search-icons a{
-  text-decoration: none;
-}
+
 
 @media screen and (max-width:1345px) {
   .header-content{
@@ -130,7 +129,7 @@ h1{
     width: 300px;
     height: 30px;
   }
-  .icons{
+  .profil-icons img{
     width: 30px;
     height: 30px;
   }
@@ -142,6 +141,9 @@ h1{
 }
 
 @media screen and (max-width:1110px) {
+  .header-content{
+    margin-bottom: 20px;
+  }
   .header-search-icons{
     display: flex;
     flex-direction: column;
@@ -169,18 +171,31 @@ h1{
   }
 }
 
-.login-register{
-  width: 220px;
-  height: 40px;
+.log-reg{
+  display: flex;
   background-color: #000000;
   border: 3px solid #ffffff;
   color: var(--color-white);
   position: absolute;
   right: 10px;
+  z-index: 9;
 }
-.login-register a{
+.log-reg a{
   text-decoration: none;
   color: var(--color-white);
+  padding: 5px;
+}
+.after-log-reg a:nth-child(-n+3){
+  border-bottom: 3px solid white;
+}
+
+.after-log-reg img{
+  width: 25px;
+  height: 25px;
+}
+
+.log-reg{
+  display: none;
 }
 
 /* MENU */
@@ -227,7 +242,7 @@ h2{
   .menu-box{
     display: none;
     position: absolute;
-    z-index: 999;
+    z-index: 9;
     margin-left: 0;
   }
   .burger-icon{
@@ -298,7 +313,7 @@ h3{
   position: absolute;
   top: 40%;
   cursor: pointer;
-  z-index: 99;
+  z-index: 9;
 }
 
 .pre-btn{
