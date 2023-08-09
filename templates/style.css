@@ -229,11 +229,21 @@ h1{
 }
 .menu-box li{
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
 }
 .menu-box li:hover{
   color: var(--color-orange);
   font-weight: bold;
+}
+.contact-icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.menu-end ul li{
+  display: flex; 
+  justify-content: left; 
+  align-items:center; 
 }
 .menu-end{
   display: none;
@@ -291,6 +301,7 @@ h3{
   position: relative;
   flex: 0 0 auto;
   width: 240px;
+  height: 374px;  /*CETTE PROPRIETE A VOIR*/
   background-color: rgb(255, 255, 255);
   border-radius: 10px 10px 0 0;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
@@ -346,6 +357,24 @@ h3{
   opacity: 0.5;
 }
 
+@media screen and (max-width: 650px) {
+  .product-card{
+    width: 160px;
+    height: 300px;
+    margin-right: 20px;
+  }  
+  .card-img-top{
+    height: 100px;
+  }
+  .product-card p,
+  .product-price,
+  .btn-card{
+    font-size: 12px;
+  }
+  h3{
+    font-size: 18px;
+  }
+}
 
 /* Lands */
 .lands{
@@ -363,6 +392,19 @@ h3{
   font-size: 20px;
 }
 
+@media screen and (max-width: 890px) {
+  h4{
+    font-size: 18px;
+  }
+  .land img{
+    width: 75px;
+    height: 40px;
+  } 
+  .land p{
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width:500px) {
   .lands,
   h4{
@@ -373,7 +415,6 @@ h3{
 /* FOOTER */
 
 footer{
-
   background-color: var(--color-red);
   color: var(--color-white);
   padding: 10px;
@@ -386,6 +427,7 @@ footer{
 .footer-info img{
   width: 40px;
   height: 40px;
+  margin-bottom: 15px;
 }
 
 .line{
@@ -397,10 +439,10 @@ footer{
 
 @media screen and (max-width:660px) {
   .footer h6{
-    font-size: 16px;
+    font-size: 14px;
   }
   .footer p{
-    font-size: 14px;
+    font-size: 12px;
   }
   .footer-info img{
     width: 35px;
@@ -412,6 +454,9 @@ footer{
   .footer-info,
   .line{
     display: none;
+  }
+  .autor{
+    margin-top: 0;
   }
 }
 
