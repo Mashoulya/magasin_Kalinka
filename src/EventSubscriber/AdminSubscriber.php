@@ -13,26 +13,26 @@ class AdminSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            BeforeEntityPersistedEvent::class => ['setCreatedAt'],
-            BeforeEntityUpdatedEvent::class => ['setUpdatedAt']
+            BeforeEntityPersistedEvent::class => ['setCreateAt'],
+            BeforeEntityUpdatedEvent::class => ['setUpdateAt']
         ];
     }
 
-    public function setCreatedAt(BeforeEntityPersistedEvent $event)
+    public function setCreateAt(BeforeEntityPersistedEvent $event)
     {
         $entityInstance = $event->getEntityInstance();
 
         if (!$entityInstance instanceof Product && !$entityInstance instanceof Category) return;
 
-        $entityInstance->setCreatedAt(new \DateTimeImmutable);
+        $entityInstance->setCreateAt(new \DateTimeImmutable);
     }
 
-    public function setUpdatedAt(BeforeEntityUpdatedEvent $event)
+    public function setUpdateAt(BeforeEntityUpdatedEvent $event)
     {
         $entityInstance = $event->getEntityInstance();
 
         if (!$entityInstance instanceof Product && !$entityInstance instanceof Category) return;
 
-        $entityInstance->setUpdatedAt(new \DateTimeImmutable);
+        $entityInstance->setUpdateAt(new \DateTimeImmutable);
     }
 }
