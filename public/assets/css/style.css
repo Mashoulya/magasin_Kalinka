@@ -8,12 +8,12 @@
 
 @font-face {
   font-family: 'SansitaOne';
-  src: url('public/assets/css/fonts/SansitaOne.ttf') format('truetype');
+  src: url('../css/fonts/SansitaOne.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Pattaya';
-  src: url('public/assets/css/fonts/Pattaya.ttf') format('truetype');
+  src: url('../css/fonts/Pattaya.ttf') format('truetype');
 }
 
 *, ::before, ::after{
@@ -32,7 +32,7 @@ body{
 
 .header{
   position: relative;
-  background-image: url('public/assets/img/header.png');
+  background-image: url('../img/header.png');
   width: 100%;
   height: 30vh;
   background-size: cover;
@@ -265,19 +265,23 @@ h1{
 .menu-title{
   border-radius: 10px 10px 0 0;
 }
+nav a{
+  text-decoration: none;
+  color: black;
+}
+nav a:hover{
+  color: var(--color-orange);
+  font-weight: bold;
+}
 .menu-box ul,
 .menu-end ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.menu-box li{
+.menu-box li {
   cursor: pointer;
   padding: 10px;
-}
-.menu-box li:hover{
-  color: var(--color-orange);
-  font-weight: bold;
 }
 .contact-icon{
   width: 20px;

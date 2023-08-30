@@ -5,41 +5,39 @@
 {% block body %}
 
 <!-- NAV-MENU -->
-
-
-  
+ 
 <div class="container-fluid d-flex mb-4">
   
     <nav id="menu-box" class="menu-box">
       <div class="menu-title d-flex align-items-center justify-content-center">
-        <h2 class="fw-bold">Каталог продуктов</h2>
+        <h2 class="fw-bold">Menu</h2>
       </div>
       <ul class="menu-list">
-        <li>Хлеб</li>
-        <li>Молочные продукты</li>
-        <li>Мясо и колбасы</li>
-        <li>Рыба</li>
-        <li>Фрукты и овощи</li>
-        <li>Замороженные продукты</li>
-        <li>Консервы и консервированные продукты</li>
-        <li>Сыры</li>
-        <li>Бакалея</li>
-        <li>Кондитерские изделия</li>
-        <li>Напитки</li>
-        <li>Алкоголь</li>
-        <li>Закуски</li>
-        <li>Соусы, специи и приправы</li>
-        <li>Сувениры и подарки</li>
-        <li>Косметика</li>
+        <li><a href="{{ path('app_category') }}">Pain et viennoiseries</a></li>
+        <li><a href="">Produits laitiers</a></li>
+        <li><a href="">Viande et charcuterie</a></li>
+        <li><a href="">Poissons et fruits de mer</a></li>
+        <li><a href="">Fruits et légumes</a></li>
+        <li><a href="">Produits surgelés</a></li>
+        <li><a href="">Conserves et produits en conserve</a></li>
+        <li><a href="">Fromages</a></li>
+        <li><a href="">Épicerie et céréales</a></li>
+        <li><a href="">Confiseries</a></li>
+        <li><a href="">Boissons</a></li>
+        <li><a href="">Boissons alcoolisées</a></li>
+        <li><a href="">Apéritifs</a></li>
+        <li><a href="">Sauces, épices et condiments</a></li>
+        <li><a href="">Souvenirs et cadeaux</a></li>
+        <li><a href="">Cosmétiques et hygiène</a></li>
       </ul>
       <div class="menu-end">
         <div class="menu-title-end d-flex justify-content-center align-items-center">
           <h2 class="fw-bold">Contact</h2>
         </div>
         <ul>
-          <li><img class="contact-icon" src="img/icon-phone48.png" alt=""> 0102030405</li>
-          <li><img class="contact-icon" src="img/icon-letter48.png" alt=""> azertyuiop@gmail.com</li>
-          <li><img class="contact-icon" src="img/icon-gps.png" alt=""> 50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</li>
+          <li><img class="contact-icon" src="../assets/img/icon-phone48.png" alt=""> 0102030405</li>
+          <li><img class="contact-icon" src="../assets/img/icon-letter48.png" alt=""> azertyuiop@gmail.com</li>
+          <li><img class="contact-icon" src="../assets/img/icon-gps.png" alt=""> 50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</li>
         </ul>    
       </div>
     </nav>
@@ -57,91 +55,91 @@
       <div class="wrapper cards-box d-flex">
       
         <div class="product-card d-flex flex-column">
-          <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eum. Lorem, ipsum dolor. 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
       
         <div class="product-card d-flex flex-column">
-          <img src="img/chorizo.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/chorizo.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet consectetur 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
       
         <div class="product-card d-flex flex-column">
-          <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eum. Lorem, ipsum dolor. 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
       
         <div class="product-card d-flex flex-column">
-          <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
       
         <div class="product-card d-flex flex-column">
-          <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
 
         <div class="product-card d-flex flex-column">
-          <img src="img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 200mg</p>
           </div>
           <div class="product-price text-center fw-bold">1,50€</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="img/icon-minus-red24.png" alt=""></a>
+            <a href="" class="me-auto"><img src="../assets/img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
-            <a href=""><img src="img/plus-red24.png" alt=""></a>
+            <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
           <button class="btn-card">Ajouter au panier</button>
         </div>
@@ -149,8 +147,8 @@
       </div>
     </div>
     
-    <button class="pre-btn"><img src="img/arrow30.png" alt=""></button>
-    <button class="nxt-btn"><img src="img/arrow30.png" alt=""></button>
+    <button class="pre-btn"><img src="../assets/img/arrow30.png" alt=""></button>
+    <button class="nxt-btn"><img src="../assets/img/arrow30.png" alt=""></button>
   </div>
   
   <h4 class="p-4 text-center">Nous proposons un large choix de produits de différents pays dans notre magasin</h4>
@@ -158,27 +156,27 @@
   <div class="lands">
     
     <div class="land">
-      <img src="img/Armenia.png" alt="">
+      <img src="../assets/img/Armenia.png" alt="">
       <p>Arménie</p>
     </div>
   
     <div class="land">
-      <img src="img/Belarus.png" alt="">
+      <img src="../assets/img/Belarus.png" alt="">
       <p>Biélorussie</p>
     </div>
   
     <div class="land">
-      <img src="img/Georgia.png" alt="">
+      <img src="../assets/img/Georgia.png" alt="">
       <p>Georgie</p>
     </div>
   
     <div class="land">
-      <img src="img/Russia.png" alt="">
+      <img src="../assets/img/Russia.png" alt="">
       <p>Russie</p>
     </div>
   
     <div class="land">
-      <img src="img/Ukraine.png" alt="">
+      <img src="../assets/img/Ukraine.png" alt="">
       <p>Ukraine</p>
     </div>
   
@@ -188,7 +186,5 @@
 
 </div>
   
- <!-- FOOTER -->
- 
 
 {% endblock %}
