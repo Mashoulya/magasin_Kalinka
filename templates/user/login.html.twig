@@ -6,6 +6,13 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
+
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="..shop/index.html.twig">Accueil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+                </ol>
+            </nav>
             
             <h3 class="text-center fw-bold mb-3">Mon compte</h3>
             <p class="text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
@@ -13,18 +20,22 @@
             <div class="col-md-12 col-lg-6">
                 
                 <h4 class="text-center">CONNEXION</h4>
-                <form class="login-register-form display-flex flex-column justify-content-between">
+                <form class="login-register-form display-flex flex-column justify-content-between" action="{{ path('app_login') }}" method="post">
                     
                     <div class="form-group">
-                        <label for="usernameEmail">Nom ou Email</label>
-                        <input type="text" id="usernameEmail" placeholder="Entrez votre nom ou email">
+                        <label for="userEmail">Email</label>
+                        <input type="text" id="userEmail" name="_email" placeholder="Entrez votre email" value="{{ email }}">
                     </div>
-        
+
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
-                        <input type="password" id="password" placeholder="Entrez votre mot de passe">
+                        <input type="password" id="password" name="_password" placeholder="Entrez votre mot de passe">
                     </div>
                     
+                    {% if error %}
+		                <div class="error login">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	                {% endif %}
+
                     <div class="form-group">
                         <button class="log-reg-btn" type="submit">Se connecter</button>
                     </div>

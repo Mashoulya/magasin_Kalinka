@@ -2,15 +2,17 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
+use App\Entity\User;
 use App\Entity\Product;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
-use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use App\Entity\Category;
+use App\Controller\Admin\DashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -32,7 +34,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Website');
+            ->setTitle('Kalinka');
     }
 
     public function configureMenuItems(): iterable
@@ -51,6 +53,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
             MenuItem::linkToCrud('Create Category', 'fas fa-plus', Category::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Categories', 'fas fa-eye', Category::class)
+        ]);
+
+        yield MenuItem::section('Users');
+
+        yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
+            MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
         ]);
     }
 }
