@@ -1,20 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}Liste de produits{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/magasin_Kalinka/src/Controller/ProductController.php'|file_link(0) }}">src/Controller/ProductController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/magasin_Kalinka/templates/product/index.html.twig'|file_link(0) }}">templates/product/index.html.twig</a></code></li>
-    </ul>
+  <section class="">
+      
+    <h3 class="text-center fw-bold mb-5">Products</h3>
+      
+    <div class="cards-box d-flex flex-wrap justify-content-center">
+      
+      {% for product in products %}
+
+        <div class="product-card d-flex flex-column mb-3">
+          <img src="{{ product.image }}" alt="" class="card-img-top img-fluid">
+          <div class="product-details p-1">
+            <p class="text-center">{{ product.description }}</p>
+          </div>
+          <div class="product-price text-center fw-bold">{{ product.price }}</div>
+          <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
+            <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
+            <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
+            <span>2</span>
+            <a href=""><img src="../img/plus-red24.png" alt=""></a>
+          </div>
+          <button class="btn-card">Добавить в корзину</button>
+        </div>
+
+       {% endfor %}
+             
+    </div>
+
+  </section>     
+   
 </div>
+
+     
+
 {% endblock %}

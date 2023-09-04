@@ -10,121 +10,35 @@
     
   <div class="container-fluid d-flex mb-4">
     
-    <nav id="menu-box" class="menu-box">
-      <div class="menu-title d-flex align-items-center justify-content-center">
-        <h2 class="fw-bold">Каталог продуктов</h2>
-      </div>
-      <ul class="menu-list">
-        <li><a href="">Pain et viennoiseries</a></li>
-        <li><a href="">Produits laitiers</a></li>
-        <li><a href="">Viande et charcuterie</a></li>
-        <li><a href="">Poissons et fruits de mer</a></li>
-        <li><a href="">Fruits et légumes</a></li>
-        <li><a href="">Produits surgelés</a></li>
-        <li><a href="">Conserves et produits en conserve</a></li>
-        <li><a href="">Fromages</a></li>
-        <li><a href="">Épicerie et céréales</a></li>
-        <li><a href="">Confiseries</a></li>
-        <li><a href="">Boissons</a></li>
-        <li><a href="">Boissons alcoolisées</a></li>
-        <li><a href="">Apéritifs</a></li>
-        <li><a href="">Sauces, épices et condiments</a></li>
-        <li><a href="">Souvenirs et cadeaux</a></li>
-        <li><a href="">Cosmétiques et hygiène</a></li>
-      </ul>
-      <div class="menu-end">
-        <div class="menu-title-end d-flex justify-content-center align-items-center">
-          <h2 class="fw-bold">Contact</h2>
-        </div>    
-        <p>0102030405</p>
-        <p>azertyuiop@gmail.com</p>
-        <p>50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</p>
-      </div>
-    </nav>
+{% include 'menu.html.twig' %}
     
     <!-- CONTENT -->
         
     <section class="">
       
-      <h3 class="text-center fw-bold mb-5">PAIN</h3>
+      <h3 class="text-center fw-bold mb-5">PAIN ET VIENNNOISERIES</h3>
       
       <div class="cards-box d-flex flex-wrap justify-content-center">
 
+      {% for product in products %}
+
         <div class="product-card d-flex flex-column mb-3">
-          <img src="../img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
+          <img src="{{ product.image }}" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eum. Lorem, ipsum dolor. 200mg</p>
+            <p class="text-center">{{ product.description }}</p>
           </div>
-          <div class="product-price text-center fw-bold">1,50€</div>
+          <div class="product-price text-center fw-bold">{{ product.price }}</div>
           <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
             <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
             <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
             <span>2</span>
             <a href=""><img src="../img/plus-red24.png" alt=""></a>
           </div>
-          <button class="btn-card">Добавить в корзину</button>
+          <button class="btn-card">Ajouter au panier</button>
         </div>
+
+       {% endfor %}
     
-        <div class="product-card d-flex flex-column mb-3">
-          <img src="../img/chorizo.jpg" alt="" class="card-img-top img-fluid">
-          <div class="product-details p-1">
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur 200mg</p>
-          </div>
-          <div class="product-price text-center fw-bold">1,50€</div>
-          <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
-            <span>2</span>
-            <a href=""><img src="../img/plus-red24.png" alt=""></a>
-          </div>
-          <button class="btn-card">Добавить в корзину</button>
-        </div>
-    
-        <div class="product-card d-flex flex-column mb-3">
-          <img src="../img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
-          <div class="product-details p-1">
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eum. Lorem, ipsum dolor. 200mg</p>
-          </div>
-          <div class="product-price text-center fw-bold">1,50€</div>
-          <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
-            <span>2</span>
-            <a href=""><img src="../img/plus-red24.png" alt=""></a>
-          </div>
-          <button class="btn-card">Добавить в корзину</button>
-        </div>
-    
-        <div class="product-card d-flex flex-column mb-3">
-          <img src="../img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
-          <div class="product-details p-1">
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 200mg</p>
-          </div>
-          <div class="product-price text-center fw-bold">1,50€</div>
-          <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
-            <span>2</span>
-            <a href=""><img src="../img/plus-red24.png" alt=""></a>
-          </div>
-          <button class="btn-card">Добавить в корзину</button>
-        </div>
-    
-        <div class="product-card d-flex flex-column mb-3">
-          <img src="../img/white-carton-package-bottles-bright-board.jpg" alt="" class="card-img-top img-fluid">
-          <div class="product-details p-1">
-            <p class="text-center">Lorem ipsum dolor sit amet, 200mg</p>
-          </div>
-          <div class="product-price text-center fw-bold">1,50€</div>
-          <div class="product-logo-details d-flex justify-content-between align-items-end p-2">
-            <a href="" class="me-auto"><img src="../img/icon-heart-red24.png" alt=""></a>
-            <a href=""><img src="../img/icon-minus-red24.png" alt=""></a>
-            <span>2</span>
-            <a href=""><img src="../img/plus-red24.png" alt=""></a>
-          </div>
-          <button class="btn-card">Добавить в корзину</button>
-        </div>     
-             
       </div>
   
     </section>     

@@ -1,0 +1,20 @@
+<nav id="menu-box" class="menu-box">
+      <div class="menu-title d-flex align-items-center justify-content-center">
+        <h2 class="fw-bold">Menu</h2>
+      </div>
+      <ul class="menu-list">
+        {% for category in categories %}
+            <li><a href="{{ path('app_category', {'id': category.id}) }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+      <div class="menu-end">
+        <div class="menu-title-end d-flex justify-content-center align-items-center">
+          <h2 class="fw-bold">Contact</h2>
+        </div>
+        <ul>
+          <li><img class="contact-icon" src="../assets/img/icon-phone48.png" alt=""> 0102030405</li>
+          <li><img class="contact-icon" src="../assets/img/icon-letter48.png" alt=""> azertyuiop@gmail.com</li>
+          <li><img class="contact-icon" src="../assets/img/icon-gps.png" alt=""> 50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</li>
+        </ul>    
+      </div>
+</nav>

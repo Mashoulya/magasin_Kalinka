@@ -8,40 +8,7 @@
  
 <div class="container-fluid d-flex mb-4">
   
-    <nav id="menu-box" class="menu-box">
-      <div class="menu-title d-flex align-items-center justify-content-center">
-        <h2 class="fw-bold">Menu</h2>
-      </div>
-      <ul class="menu-list">
-        <li><a href="{{ path('app_category') }}">Pain et viennoiseries</a></li>
-        <li><a href="">Produits laitiers</a></li>
-        <li><a href="">Viande et charcuterie</a></li>
-        <li><a href="">Poissons et fruits de mer</a></li>
-        <li><a href="">Fruits et légumes</a></li>
-        <li><a href="">Produits surgelés</a></li>
-        <li><a href="">Conserves et produits en conserve</a></li>
-        <li><a href="">Fromages</a></li>
-        <li><a href="">Épicerie et céréales</a></li>
-        <li><a href="">Confiseries</a></li>
-        <li><a href="">Boissons</a></li>
-        <li><a href="">Boissons alcoolisées</a></li>
-        <li><a href="">Apéritifs</a></li>
-        <li><a href="">Sauces, épices et condiments</a></li>
-        <li><a href="">Souvenirs et cadeaux</a></li>
-        <li><a href="">Cosmétiques et hygiène</a></li>
-      </ul>
-      <div class="menu-end">
-        <div class="menu-title-end d-flex justify-content-center align-items-center">
-          <h2 class="fw-bold">Contact</h2>
-        </div>
-        <ul>
-          <li><img class="contact-icon" src="../assets/img/icon-phone48.png" alt=""> 0102030405</li>
-          <li><img class="contact-icon" src="../assets/img/icon-letter48.png" alt=""> azertyuiop@gmail.com</li>
-          <li><img class="contact-icon" src="../assets/img/icon-gps.png" alt=""> 50 Bd Jean Mermoz, 35136<br>Saint-Jacques-de-la-Lande</li>
-        </ul>    
-      </div>
-    </nav>
-
+ {% include 'menu.html.twig' %}
           
 <!-- CONTENT -->
 
