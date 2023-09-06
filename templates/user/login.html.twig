@@ -20,21 +20,19 @@
             <div class="col-md-12 col-lg-6">
                 
                 <h4 class="text-center">CONNEXION</h4>
-                <form class="login-register-form display-flex flex-column justify-content-between" action="{{ path('app_login') }}" method="post">
+
+                <form class="login-register-form display-flex flex-column justify-content-between" method="post">
                     
                     <div class="form-group">
                         <label for="userEmail">Email</label>
-                        <input type="text" id="userEmail" name="_email" placeholder="Entrez votre email" value="{{ email }}">
+                        <input type="text" id="userEmail" name="email" placeholder="Entrez votre email">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="_password" placeholder="Entrez votre mot de passe">
+                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
                     </div>
                     
-                    {% if error %}
-		                <div class="error login">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-	                {% endif %}
 
                     <div class="form-group">
                         <button class="log-reg-btn" type="submit">Se connecter</button>
@@ -51,6 +49,7 @@
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>
