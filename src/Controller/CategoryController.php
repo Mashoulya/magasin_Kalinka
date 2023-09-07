@@ -19,15 +19,19 @@ class CategoryController extends AbstractController
         $categoryRepository = $entityManager->getRepository(Category::class);
         $categories = $categoryRepository->findAll();
         
+        $category = $categoryRepository->find($id);
+        
         $productRepository = $entityManager->getRepository(Product::class); // Repository pour les produits
      
-        $products = $productRepository->findByCategoryId($id); 
+        $products = $productRepository->findByCategoryId($id);
 
+       
         
         
         return $this->render('category/category.html.twig', [
             'controller_name' => 'CategoryController',
             'categories' => $categories,
+            'category' => $category,
             'products' => $products,
         ]);
     }
