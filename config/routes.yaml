@@ -4,6 +4,10 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+app_index:
+    path: /
+    controller: App\Controller\IndexController::index
+
 app_category:
     path: /category
     controller: App\Controller\CategoryController::category

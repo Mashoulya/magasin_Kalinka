@@ -4,7 +4,7 @@
       </div>
       <ul class="menu-list">
         {% for category in categories %}
-            <li><a href="{{ path('app_category', {'id': category.id}) }}">{{ category.name }}</a></li>
+            <li><a class="menu-li" href="{{ path('app_category', {'id': category.id}) }}">{{ category.name }}</a></li>
         {% endfor %}
     </ul>
       <div class="menu-end">

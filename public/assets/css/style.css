@@ -238,6 +238,10 @@ h1{
   display: none;
 }
 
+.breadcrumb-item a{
+  color: black;
+}
+
 /* MENU */
 
 .burger-icon{
@@ -265,11 +269,11 @@ h1{
 .menu-title{
   border-radius: 10px 10px 0 0;
 }
-nav a{
+.menu-li{
   text-decoration: none;
   color: black;
 }
-nav a:hover{
+.menu-li:hover{
   color: var(--color-orange);
   font-weight: bold;
 }

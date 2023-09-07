@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     #[Route(path: '/connexion', name: 'security_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function securelogin(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('admin');
@@ -58,6 +58,23 @@ class SecurityController extends AbstractController
             // the label displayed for the remember me checkbox (the |trans filter is applied to it)
             'remember_me_label' => 'Se souvenir de moi',
         ]);
+    }
+
+    #[Route('/login', name: 'app_login')]
+    public function login(AuthenticationUtils $authenticationUtils): Response
+    {
+
+           // get the login error if there is one
+         $error = $authenticationUtils->getLastAuthenticationError();
+
+         // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('user/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+        ]);
+
     }
 
     #[Route(path: '/deconnexion', name: 'security_logout')]

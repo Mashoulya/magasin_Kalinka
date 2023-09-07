@@ -59,31 +59,31 @@ Class UserFrontController extends AbstractController
     }
 
     
-    #[Route('/login', name: 'app_login')]
-    public function login(Request $request, AuthenticationUtils $authenticationUtils, UserPasswordHasherInterface $passwordHasher): Response
-    {
-        // Récupérez les données du formulaire
-        $email = $request->request->get('email'); // Utilisez le nom du champ dans votre formulaire
-        $password = $request->request->get('password');
+    // #[Route('/login', name: 'app_login')]
+    // public function login(Request $request, AuthenticationUtils $authenticationUtils, UserPasswordHasherInterface $passwordHasher): Response
+    // {
+    //     // Récupérez les données du formulaire
+    //     $email = $request->request->get('email'); // Utilisez le nom du champ dans votre formulaire
+    //     $password = $request->request->get('password');
 
-        // Recherchez l'utilisateur dans la base de données par email
-        $userRepository = $this->entityManager->getRepository(User::class);
-        $user = $userRepository->findOneBy(['email' => $email]);
+    //     // Recherchez l'utilisateur dans la base de données par email
+    //     $userRepository = $this->entityManager->getRepository(User::class);
+    //     $user = $userRepository->findOneBy(['email' => $email]);
 
-        if ($user) {
-            // Vérifiez le mot de passe en utilisant le service de hachage de mot de passe
-            if ($passwordHasher->isPasswordValid($user, $password)) {
-                // Mot de passe valide, connectez l'utilisateur
-                $this->addFlash('success', 'Vous êtes connecté avec succès.');
+    //     if ($user) {
+    //         // Vérifiez le mot de passe en utilisant le service de hachage de mot de passe
+    //         if ($passwordHasher->isPasswordValid($user, $password)) {
+    //             // Mot de passe valide, connectez l'utilisateur
+    //             $this->addFlash('success', 'Vous êtes connecté avec succès.');
 
-                return $this->redirectToRoute('app_index'); // Redirigez l'utilisateur vers la page d'accueil
-            }
-        }
+    //             return $this->redirectToRoute('app_index'); // Redirigez l'utilisateur vers la page d'accueil
+    //         }
+    //     }
 
-        // En cas d'erreur d'authentification, affichez un message d'erreur
-        $this->addFlash('error', 'Adresse e-mail ou mot de passe incorrect.');
+    //     // En cas d'erreur d'authentification, affichez un message d'erreur
+    //     $this->addFlash('error', 'Adresse e-mail ou mot de passe incorrect.');
 
-        return $this->render('user/login.html.twig');
-    }
+    //     return $this->render('user/login.html.twig');
+    // }
 
 }
