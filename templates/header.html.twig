@@ -92,8 +92,24 @@
         </div>
 
         <div class="before-log-reg log-reg align-items-center justify-content-center">
-          <a href="{{ path('app_login') }}" >Connexion /</a>
-          <a href="{{ path('app_register') }}">Inscription</a>
+          {% if app.user %} 
+
+    {# utilisateur connecté Admin #}
+    {% if is_granted('ROLE_ADMIN') %} 
+        <a href="{{ path('admin') }}">Dashboard</a>
+        <a href="{{ path('app_logout') }}">Déconnexion</a>
+        
+    {% else %} 
+        <a href="{{ path('mon_compte') }}">Mon compte</a>
+        <a href="{{ path('app_logout') }}">Déconnexion</a>
+    {% endif %}
+    
+{% else %} 
+    
+        <a href="{{ path('app_login') }}">Connexion /</a>
+        <a href="{{ path('app_register') }}">Inscription</a>
+  
+{% endif %}
         </div>
         <div class="after-log-reg log-reg flex-column">
           <a href="shop/orders.html"><img src="../assets/img/icon-box48.png" alt=""> Mes commandes</a>
