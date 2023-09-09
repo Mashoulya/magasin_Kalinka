@@ -36,18 +36,22 @@ right.addEventListener('click', function() {
 window.addEventListener('load', updateCardWidth);
 window.addEventListener('resize', updateCardWidth);
 
+
 // BURGER
 
 function toggleMenu() {
-    var menuBox = document.getElementById("menu-box");
-    if (menuBox.style.display === "none" || menuBox.style.display === "") {
-      menuBox.style.display = "block";
-    } else {
-      menuBox.style.display = "none";
-    }
+  var menuBox = document.getElementById("menu-box");
+  if (menuBox.style.display === "none" || menuBox.style.display === "") {
+    menuBox.style.display = "block";
+  } else {
+    menuBox.style.display = "none";
   }
+}
+
 
 
 // TOOLTIP
+
+
 
 

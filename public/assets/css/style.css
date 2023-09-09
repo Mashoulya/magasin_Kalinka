@@ -215,7 +215,6 @@ h1{
   display: flex;
   background-color: #000000;
   border: 3px solid #ffffff;
-  color: var(--color-white);
   position: absolute;
   right: 10px;
   z-index: 9;
@@ -225,11 +224,11 @@ h1{
   color: var(--color-white);
   padding: 5px;
 }
-.after-log-reg a:nth-child(-n+3){
+.user-log-reg a:nth-child(-n+3){
   border-bottom: 3px solid white;
 }
 
-.after-log-reg img{
+.user-log-reg img{
   width: 25px;
   height: 25px;
 }
@@ -624,6 +623,13 @@ footer{
 
 /* register */
 
+.error-email, .error-phone, .error-psw, .error-confirmPsw {
+  display: none;
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+}
+
 .form-group-over .first-name{
   margin-right: 20px;
 }
@@ -650,6 +656,7 @@ footer{
  }
 
 }
+
 
 /* PANIER */
 

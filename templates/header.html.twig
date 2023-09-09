@@ -1,121 +1,102 @@
-<!-- HEADER -->
- <script>
+
+<script>
  
- document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const profileIcon = document.querySelector(".user");
-  const beforeLogReg = document.querySelector(".before-log-reg");
-  const afterLogReg = document.querySelector(".after-log-reg");
+  const logReg = document.querySelector(".log-reg");
 
-  // Пример: предположим, у вас есть переменная userIsLoggedIn,
-  // которая будет true, если пользователь авторизован
-  let userIsLoggedIn = false; // Пока пользователь не авторизован
-
-  // click n'importe où pour cacher les block
   function hideHints() {
-    beforeLogReg.style.display = "none";
-    afterLogReg.style.display = "none";
+    logReg.style.display = "none";
   }
 
-  profileIcon.addEventListener("click", function () {
-    event.stopPropagation(); // Предотвращаем всплытие события до document
-    //  user est connecté
-    if (userIsLoggedIn) {
-      beforeLogReg.style.display = "none"; // cache le block avant la connexion
-      afterLogReg.style.display = "flex"; // affiche le block après la connex
-      // si user n'est pas connecté
-    } else {
-      beforeLogReg.style.display = "flex"; // affiche le block avant la connex
-      afterLogReg.style.display = "none"; // cache le block après la connex
-    }
+  profileIcon.addEventListener("click", function (event) {
+    event.stopPropagation(); // Empêche la propagation de l'événement au document
+    logReg.style.display = "flex"; // Affiche le bloc avant la connexion
   });
 
   document.addEventListener("click", function () {
     hideHints();
   });
 
-  // Здесь вы можете добавить код, который будет изменять userIsLoggedIn
-  // на true, когда пользователь авторизуется.
-
-  // Пример:
-  // userIsLoggedIn = true;
+  // Gérer le clic sur les tooltips pour éviter leur fermeture lorsqu'ils sont cliqués
+  logReg.addEventListener("click", function (event) {
+    event.stopPropagation(); // Empêche la propagation de l'événement au document
+  });
 });
- </script>
 
 
+</script>
 
-      <div class="header mb-4">
-        <div class="burger-icon" onclick="toggleMenu()">
-          <img src="../assets/img/free_icon_1.svg" alt="">
-        </div>
-        <div class="contact-info d-flex justify-content-end">
-          <span class="contact-item">
-            <img class="localis-icon" src="../assets/img/icons8-location-48.png" alt="geolocation">
-            <span class="address d-inline align-middle">
-              <a href="https://www.google.com/maps/place/50+Bd+Jean+Mermoz,+35136+Saint-Jacques-de-la-Lande/@48.0953112,-1.6990676,17z/data=!3m1!4b1!4m6!3m5!1s0x480ee077cb19bc11:0xaf2190f0a97d4862!8m2!3d48.0953076!4d-1.6964927!16s%2Fg%2F11h56b_9_x?authuser=0&entry=ttu" target="_blank">50 Bd Jean Mermoz, 35136 Saint-Jacques-de-la-Lande</a>
-            </span>
-          </span>
-          <span class="contact-item">Mardi - Dimanche, de 10:00 à 20:00</span>
-          <span class="contact-item">01 02 03 04 05</span>
-        </div>
 
-         <h1>Kalinka</h1>
+<div class="header mb-4">
+  <div class="burger-icon" onclick="toggleMenu()">
+    <img src="../assets/img/free_icon_1.svg" alt="">
+  </div>
+  <div class="contact-info d-flex justify-content-end">
+    <span class="contact-item">
+    <img class="localis-icon" src="../assets/img/icons8-location-48.png" alt="geolocation">
+    <span class="address d-inline align-middle">
+      <a href="https://www.google.com/maps/place/50+Bd+Jean+Mermoz,+35136+Saint-Jacques-de-la-Lande/@48.0953112,-1.6990676,17z/data=!3m1!4b1!4m6!3m5!1s0x480ee077cb19bc11:0xaf2190f0a97d4862!8m2!3d48.0953076!4d-1.6964927!16s%2Fg%2F11h56b_9_x?authuser=0&entry=ttu" target="_blank">50 Bd Jean Mermoz, 35136 Saint-Jacques-de-la-Lande</a>
+    </span>
+    </span>
+    <span class="contact-item">Mardi - Dimanche, de 10:00 à 20:00</span>
+    <span class="contact-item">01 02 03 04 05</span>
+  </div>
 
-        <div class="header-content d-flex flex-column justify-content-right">
+  <h1>Kalinka</h1>
 
-          <div class="header-search-icons d-flex">
-            <p class="me-auto">Épicerie et saveurs des pays de l'est</p>
+  <div class="header-content d-flex flex-column justify-content-right">
 
-            <div class="search-icons d-flex justify-content-between">
+    <div class="header-search-icons d-flex">
+      <p class="me-auto">Épicerie et saveurs des pays de l'est</p>
+
+        <div class="search-icons d-flex justify-content-between">
               
-              <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Rechercher">
-                <div>
-                  <img src="../assets/img/icons8-search-60.png" alt="search">
-                </div>
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Rechercher">
+            <div>
+              <img src="../assets/img/icons8-search-60.png" alt="search">
+            </div>
+          </div>
+              
+          <div class="profil-icons d-flex">
+            <div class="mobile-title me-auto">Kalinka</div>
+              <div>
+                <a href=""><img src="../assets/img/icons8-heart-60.png" alt="heart" class="heart" id="prof-icon"></a>
               </div>
-              
-              <div class="profil-icons d-flex">
-                <div class="mobile-title me-auto">Kalinka</div>
-                <div>
-                  <a href=""><img src="../assets/img/icons8-heart-60.png" alt="heart" class="heart" id="prof-icon"></a>
-                </div>
-                <div>
-                  <img src="../assets/img/icons8-user-48.png" alt="user" class="user" id="prof-icon">
-                </div>
-                <div>
-                  <a href="shop/shopping_cart.html"><img src="../assets/img/icons8-shopping-cart-60.png" alt="shopping" class="shop-cart" id="prof-icon"></a>
-                </div>
+              <div>
+                <img src="../assets/img/icons8-user-48.png" alt="user" class="user" id="prof-icon">
+              </div>
+              <div>
+                <a href="{{ path('app_shopping_cart') }}"><img src="../assets/img/icons8-shopping-cart-60.png" alt="shopping" class="shop-cart" id="prof-icon"></a>
               </div>
             </div>
           </div>
+    </div>
 
-        </div>
+  </div>
 
-        <div class="before-log-reg log-reg align-items-center justify-content-center">
-          {% if app.user %} 
+  <div class="log-reg align-items-center justify-content-center">
+    {% if app.user %} 
 
-    {# utilisateur connecté Admin #}
-    {% if is_granted('ROLE_ADMIN') %} 
-        <a href="{{ path('admin') }}">Dashboard</a>
+      {# utilisateur connecté Admin #}
+      {% if is_granted('ROLE_ADMIN') %} 
+        <a href="{{ path('admin') }}">Dashboard /</a>
         <a href="{{ path('app_logout') }}">Déconnexion</a>
         
-    {% else %} 
-        <a href="{{ path('mon_compte') }}">Mon compte</a>
-        <a href="{{ path('app_logout') }}">Déconnexion</a>
-    {% endif %}
+      {% else %} 
+        <div class="user-log-reg d-flex flex-column">
+          <a href="#"><img src="../assets/img/user-48.png" alt="">Mon profil</a>
+          <a href="#"><img src="../assets/img/icon-box48.png" alt="">Mes commandes</a>
+          <a href="#"><img src="../assets/img/icons8-heart-60.png" alt="">Les produits souhaités</a>
+          <a href="{{ path('app_logout') }}"><img src="../assets/img/icon-exit48.png" alt="">Déconnexion</a>
+        </div>
+      {% endif %}
     
-{% else %} 
-    
+      {% else %} 
         <a href="{{ path('app_login') }}">Connexion /</a>
         <a href="{{ path('app_register') }}">Inscription</a>
-  
-{% endif %}
-        </div>
-        <div class="after-log-reg log-reg flex-column">
-          <a href="shop/orders.html"><img src="../assets/img/icon-box48.png" alt=""> Mes commandes</a>
-          <a href="user/personal_info.html"><img src="../assets/img/user-48.png" alt=""> Mon profil</a>
-          <a href=""><img src="../assets/img/icons8-heart-60.png" alt=""> Les produits souhaités</a>
-          <a href=""><img src="../assets/img/icon-exit48.png" alt=""> Déconnexion</a>
-        </div>
-        
-      </div> 
+      {% endif %}
+  </div>
+
+</div> 

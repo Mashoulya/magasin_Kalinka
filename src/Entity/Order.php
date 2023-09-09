@@ -23,6 +23,12 @@ class Order
     #[ORM\ManyToOne(inversedBy: 'orders')]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?int $Qte = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $payed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +66,30 @@ class Order
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getQte(): ?int
+    {
+        return $this->Qte;
+    }
+
+    public function setQte(int $Qte): static
+    {
+        $this->Qte = $Qte;
+
+        return $this;
+    }
+
+    public function isPayed(): ?bool
+    {
+        return $this->payed;
+    }
+
+    public function setPayed(?bool $payed): static
+    {
+        $this->payed = $payed;
 
         return $this;
     }

@@ -21,12 +21,12 @@
                 
                 <h4 class="text-center">INSCRIPTION</h4>
 
-                <form class="login-register-form display-flex flex-column justify-content-between" method="post">
+                <form class="login-register-form display-flex flex-column justify-content-between" method="post" onsubmit="return validateForm()">
                    
                     <div class="form-group-over d-flex">
                         <div class="form-group first-name">
                             <label for="firstName">Prénom</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" onblur="validateFirstName(this.value)" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Nom</label>
@@ -36,25 +36,26 @@
         
                     <div class="form-group">
                         <label for="phone">Téléphone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" onblur="validatePhoneNumber(this.value)" required>
+                        <span class="error-phone">Le numéro de téléphone doit commencer par 0 et contenir 10 chiffres.</span>
                     </div>
         
                     <div class="form-group">
                         <label for="email">Mail</label>
-                        <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+                        <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" onblur="validateEmail(this.value)" required>
+                        <span class="error-email">L'adresse e-mail n'est pas au bon format.</span>
                     </div>
       
                     <div class="form-group">
-                    {% if(messageEerror) %}
-                    <div>{{messageEerror}}</div>
-                    {% endif %}
                         <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" onblur="validatePassword(this.value)" required>
+                        <span class="error-psw">Le mot de passe doit contenir au moins 8 caractères, dont au moins une majuscule et un symbole.</span>
                     </div>
         
                     <div class="form-group">
                         <label for="confirmPassword">Confirmation de mot de passe</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmez votre mot de passe" onblur="validatePasswordConfirmation(this.value)" required>
+                        <span class="error-confirmPsw">Les mots de passe ne correspondent pas.</span>
                     </div>
 
                     <div class="form-group">
@@ -66,4 +67,7 @@
         </div>
     </div>
 
+    {% block javascripts %}
+        <script src="{{ asset('assets/js/register.js') }}"></script>
+    {% endblock %}
 {% endblock %}
