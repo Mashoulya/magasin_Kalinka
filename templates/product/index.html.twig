@@ -1,12 +1,12 @@
 
-    <h3 class="text-center fw-bold mb-5">{{ category.name }}</h3>
+    {# <h3 class="text-center fw-bold mb-5">{{ category.name }}</h3> #}
       
     <div class="cards-box d-flex flex-wrap justify-content-center">
       
       {% for product in products %}
 
         <div class="product-card d-flex flex-column mb-3">
-          <img src="{{ product.image }}" alt="" class="card-img-top img-fluid">
+          <img src="{{ asset('upload/images/products/' ~ product.image) }}" alt="" class="card-img-top img-fluid">
           <div class="product-details p-1">
             <p class="text-center">{{ product.description }}</p>
           </div>
@@ -17,7 +17,7 @@
             <span>2</span>
             <a href=""><img src="../assets/img/plus-red24.png" alt=""></a>
           </div>
-          <button class="btn-card">Ajouter au panier</button>
+          <button class="btn-card"><a href="{{ path('cart_add', {id: product.id}) }}">Ajouter au panier</a></button>
         </div>
 
        {% endfor %}

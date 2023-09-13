@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier{% endblock %}
+{% block title %}Mon panier{% endblock %}
 
 {% block body %}
 
@@ -18,56 +18,42 @@
     <h3 class="text-center fw-bold mb-3">Panier</h3>
     
     <div class="col-md-12 col-lg-8">
-
-          {# {% for item in cartItems %}
-          {% endfor %}     #}
+      {% for item in data %}
           
       <div class="cart-item mb-3">
-        <img class="img-item" src="../assets/img/white-carton-package-bottles-bright-board.jpg" alt="product1">
+        <img class="img-item" src="{{ item.product.image }}" alt="product1">
           <div class="product-info">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur iste dolor aut!</p>
-            <span>Prix unité: 15 €</span>
+            <p>{{ item.product.description }}</p>
+            <span>Prix unité: {{ item.product.price }} €</span>
           </div>
           <div class="quantity-item d-flex align-items-center">
             <a href=""><img src="../assets/img/icon-minus-black32.png" alt=""></a>
-            <span class="quantity">10</span>
+            <span class="quantity">{{ item.quantity }}</span>
             <a href=""><img src="../assets/img/icon-plus-black.png" alt=""></a>
-          </div>
-          
-          <span class="total-price-item"><strong>Prix total: 15 €</strong></span>
+          </div> 
+          <span class="total-price-item"><strong>Prix total: {{ item.quantity * item.product.price }} €</strong></span>
           <a class="delete-icon" href=""><img src="../assets/img/icon-delete.png" alt=""></a>
       </div>
 
-      <div class="cart-item mb-3">
-        <img class="img-item" src="../img/chorizo.jpg" alt="product2">
-          <div class="product-info">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur iste dolor aut!</p>
-            <span>Prix unité: 15 €</span>
-          </div>
-          <div class="quantity-item d-flex align-items-center">
-            <a href=""><img src="../img/icon-minus-black32.png" alt=""></a>
-            <span class="quantity">10</span>
-            <a href=""><img src="../img/icon-plus-black.png" alt=""></a>
-          </div>
-            <span class="total-price-item"><strong>Prix total: 15 €</strong></span>
-            <a class="delete-icon" href=""><img src="../img/icon-delete.png" alt=""></a>
-      </div>
-     
+      {% else %}
+
+        <p>Votre panier est vide</p>
+
+      {% endfor %}
+
     </div>
 
     <div class="col-md-12 col-lg-4">
-
       <div class="total-price-cart d-flex flex-column">
         <div class="total-price d-flex justify-content-between fw-bold">
           <p>Prix total du panier:</p>
-          <span>15 €</span>
-      </div>
+          <span>{{ total }} €</span>
+        </div>
         <button class="pay-btn fw-bold" type="submit">Réserver</button>
+      </div>
     </div>
 
-    </div>
-
-    </div>
+  </div>
 </div>
 
 {% endblock %}
