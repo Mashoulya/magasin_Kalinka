@@ -11,3 +11,7 @@ app_index:
 app_category:
     path: /category
     controller: App\Controller\CategoryController::category
+
+app_user_info:
+    path: /user
+    controller: App\Controller\UserController::index
