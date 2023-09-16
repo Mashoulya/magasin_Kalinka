@@ -16,7 +16,7 @@ class ShoppingCartController extends AbstractController
     {
         $cart = $session->get('cart', []);
        
-        //on initialise des ariables
+        //on initialise des variables
         $data = [];
         $total = 0;
         
@@ -32,16 +32,14 @@ class ShoppingCartController extends AbstractController
        return $this->render('shop/shopping_cart.html.twig', compact('data', 'total'));
     }
 
-    #[Route('/add/{id}', name: 'cart_add')]
+    #[Route('/add/{id}', name: 'add')]
     public function add(Product $product, SessionInterface $session)
     {
-
         //on récupère id du produit
         $id = $product->getId();
 
         //on récupère le panier existant
         $cart = $session->get('cart', []);
-
 
         //on ajoute le produit dan sle panier s'il n'y est pas encore
         //sinon on incrémente sa qte
@@ -51,14 +49,51 @@ class ShoppingCartController extends AbstractController
             $cart[$id]++;
         }
 
-
-        $cart[4] = 1;
-
         $session->set('cart', $cart);
 
         //on redirige vers la page panier
         return $this->redirectToRoute('shopping_cart');
         
+    }
+
+    #[Route('/remove/{id}', name: 'remove')]
+    public function remove(Product $product, SessionInterface $session)
+    {
+        $id = $product->getId();
+
+        $cart = $session->get('cart', []);
+
+        if(!empty($cart[$id])){
+            if($cart[$id] > 1)
+                $cart[$id]--;
+            }else{
+                unset($cart[$id]);
+            }
+
+        $session->set('cart', $cart);
+
+        //on redirige vers la page panier
+        return $this->redirectToRoute('shopping_cart');    
+    }
+
+    
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(Product $product, SessionInterface $session)
+    {
+        //on récupère id du produit
+        $id = $product->getId();
+
+        //on récupère le panier existant
+        $cart = $session->get('cart', []);
+
+        if(!empty($cart[$id])){
+           unset($cart[$id]);
+        }
+ 
+        $session->set('cart', $cart);
+
+        //on redirige vers la page panier
+        return $this->redirectToRoute('shopping_cart');        
     }
 
 }

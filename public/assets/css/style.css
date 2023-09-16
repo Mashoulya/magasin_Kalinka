@@ -403,11 +403,15 @@ h3{
 .product-details p{
   margin-bottom: 5px;
 }
-.product-logo-details{
+.product-logo{
   padding: 1rem;
   margin-top: auto;
 }
-.btn-card{
+.logo-btn{
+  border: none;
+  background-color: var(--color-white);
+}
+.btn-add-card{
   width: 100%;
   height: 40px;
   background-color: var(--color-red);
@@ -454,7 +458,7 @@ h3{
   }
   .product-card p,
   .product-price,
-  .btn-card{
+  .btn-add-card{
     font-size: 11px;
   }
   h3{

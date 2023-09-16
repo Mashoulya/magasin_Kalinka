@@ -27,12 +27,12 @@
             <span>Prix unité: {{ item.product.price }} €</span>
           </div>
           <div class="quantity-item d-flex align-items-center">
-            <a href=""><img src="../assets/img/icon-minus-black32.png" alt=""></a>
+            <a href="{{ path('remove', {id: item.product.id}) }}"><img src="../assets/img/icon-minus-black32.png" alt=""></a>
             <span class="quantity">{{ item.quantity }}</span>
-            <a href=""><img src="../assets/img/icon-plus-black.png" alt=""></a>
+            <a href="{{ path('add', {id: item.product.id}) }}"><img src="../assets/img/icon-plus-black.png" alt=""></a>
           </div> 
           <span class="total-price-item"><strong>Prix total: {{ item.quantity * item.product.price }} €</strong></span>
-          <a class="delete-icon" href=""><img src="../assets/img/icon-delete.png" alt=""></a>
+          <a class="delete-icon" href="{{ path('delete', {id: item.product.id}) }}"><img src="../assets/img/icon-delete.png" alt=""></a>
       </div>
 
       {% else %}

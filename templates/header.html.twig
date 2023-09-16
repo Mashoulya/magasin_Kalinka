@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       {# utilisateur connecté Admin #}
       {% if is_granted('ROLE_ADMIN') %} 
-        <a href="{{ path('admin') }}">Dashboard /</a>
-        <a href="{{ path('app_logout') }}">Déconnexion</a>
+        <a href="{{ path('admin') }}">Dashboard</a>
+        <a href="{{ path('app_logout') }}">/ Déconnexion</a>
         
       {% else %} 
         <div class="user-log-reg d-flex flex-column">
@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
       {% endif %}
     
       {% else %} 
-        <a href="{{ path('app_login') }}">Connexion /</a>
-        <a href="{{ path('app_register') }}">Inscription</a>
+        <a href="{{ path('app_login') }}">Connexion</a>
+        <a href="{{ path('app_register') }}">/ Inscription</a>
       {% endif %}
   </div>
 

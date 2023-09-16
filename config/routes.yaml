@@ -11,4 +11,3 @@ app_index:
 app_category:
     path: /category
     controller: App\Controller\CategoryController::category
-

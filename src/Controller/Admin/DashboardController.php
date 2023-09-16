@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Entity\Category;
 use App\Controller\Admin\DashboardController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Controller\Admin\ProductCrudController;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
