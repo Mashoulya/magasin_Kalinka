@@ -627,6 +627,13 @@ footer{
 
 /* register */
 
+.confirm-msg{
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  margin: 50px;
+}
+
 .error-email, .error-phone, .error-psw, .error-confirmPsw {
   display: none;
   color: red;

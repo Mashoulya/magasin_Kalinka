@@ -10,23 +10,25 @@
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="{{ path('app_index') }}">Accueil</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+                  <li class="breadcrumb-item active" aria-current="page">Inscription</li>
                 </ol>
             </nav>
-            
-            <h3 class="text-center fw-bold mb-3">Mon compte</h3>
-            <p class="text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
-            
+       
             <div class="col-md-12 col-lg-6">
                 
-                <h4 class="text-center">INSCRIPTION</h4>
+                <h4 class="h4 text-center">INSCRIPTION</h4>
 
-                <form class="login-register-form display-flex flex-column justify-content-between" method="post" onsubmit="return validateForm()">
+                <p class="auth-msg text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
+
+                <p class="confirm-msg">Votre compte a été créé avec succès !</p>
+        
+
+                <form class="login-register-form display-flex flex-column justify-content-between mb-5" method="post" onsubmit="return validateForm()">
                    
                     <div class="form-group-over d-flex">
                         <div class="form-group first-name">
                             <label for="firstName">Prénom</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" onblur="validateFirstName(this.value)" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Nom</label>
@@ -39,12 +41,18 @@
                         <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" onblur="validatePhoneNumber(this.value)" required>
                         <span class="error-phone">Le numéro de téléphone doit commencer par 0 et contenir 10 chiffres.</span>
                     </div>
+                    {% for message in app.flashes('errorTel') %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% endfor %}
         
                     <div class="form-group">
                         <label for="email">Mail</label>
                         <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" onblur="validateEmail(this.value)" required>
                         <span class="error-email">L'adresse e-mail n'est pas au bon format.</span>
                     </div>
+                    {% for message in app.flashes('errorMail') %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% endfor %}
       
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
@@ -61,6 +69,7 @@
                     <div class="form-group">
                         <button class="log-reg-btn" type="submit" name="submit" >S'inscrire</button>
                     </div>
+                    <span id="error-message"></span>
                 </form>
 
             </div>

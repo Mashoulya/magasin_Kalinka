@@ -32,7 +32,7 @@ class CategoryCrudController extends AbstractCrudController
     {
         if (!$entityInstance instanceof Category) return;
 
-        $entityInstance->setCreatedAt(new \DateTimeImmutable);
+        $entityInstance->setCreateAt(new \DateTimeImmutable);
 
         parent::persistEntity($em, $entityInstance);
     }

@@ -33,6 +33,23 @@ Class RegisterController extends AbstractController
             $email = $request->request->get('email');
             $plainPassword = $request->request->get('password');
 
+        // Vérifier si le tél existe déjà dans la bdd
+        $existingTel = $this->entityManager->getRepository(User::class)->findOneBy(['tel' => $tel]);
+        if($existingTel){
+            $this->addFlash('errorTel', 'Ce numéro de téléphone est déjà utilisé.');
+
+            return $this->redirectToRoute('app_register');
+        }
+
+        // Vérifier si l'email existe déjà
+        $existingEmail = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        if ($existingEmail) {
+    
+            $this->addFlash('errorMail', 'Cet email est déjà utilisé.');
+
+            return $this->redirectToRoute('app_register');
+        }
+
             // Créer un nouvel utilisateur
             $user = new User();
             $user->setFirstName($firstName);
@@ -47,10 +64,7 @@ Class RegisterController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // Affichez un message de confirmation
-            $this->addFlash('success', 'Le compte a été créé.');
-
-            return $this->redirectToRoute('app_index');
+            return $this->redirectToRoute('app_register');
         }
 
         // Si le formulaire n'est pas soumis, affichez le formulaire
