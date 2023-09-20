@@ -18,17 +18,17 @@ class Orders
     #[ORM\Column(length: 20)]
     private ?string $reference = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $payed = null;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrdersDetails::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrdersDetails::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $ordersDetails;
 
     public function __construct()
@@ -58,7 +58,7 @@ class Orders
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
+    public function setCreatedAt(?\DateTimeImmutable $created_at): static
     {
         $this->created_at = $created_at;
 
@@ -70,7 +70,7 @@ class Orders
         return $this->payed;
     }
 
-    public function setPayed(bool $payed): static
+    public function setPayed(?bool $payed): static
     {
         $this->payed = $payed;
 
@@ -97,7 +97,7 @@ class Orders
         return $this->ordersDetails;
     }
 
-    public function addOrdersDetail(OrdersDetails $ordersDetail): static
+    public function addOrdersDetails(OrdersDetails $ordersDetail): static
     {
         if (!$this->ordersDetails->contains($ordersDetail)) {
             $this->ordersDetails->add($ordersDetail);

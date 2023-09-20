@@ -695,7 +695,42 @@ footer{
 .delete-icon img{
   width: 30px;
 }
-  
+
+.empty-cart{
+  font-size: 24px;
+}
+
+#confirm-dialog{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  width: 360px;
+  height: 130px;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#cancel-btn, #confirm-btn{
+  width: auto;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+#cancel-btn{
+  background-color: #D9887B;
+}
+#confirm-btn{
+  background-color: #4FC272;
+  margin-right: auto;
+}
+
   
   /* les commandes du panier responsives */
  @media (max-width: 990px) {
@@ -783,7 +818,15 @@ footer{
   border-radius: 5px;
   padding: 10px;
 }
-
+.table{
+  width: 700px;
+  
+  border-radius: 10px 10px 0 0;
+}
+.table th{
+  border-radius: 10px 10px 0 0;
+  background-color: hsla(0, 0%, 85%, 0.3);
+}
 /* DONNEES */
 
 .info-group {
