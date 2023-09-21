@@ -19,9 +19,6 @@ class Orders
     private ?string $reference = null;
 
     #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $created_at = null;
-
-    #[ORM\Column(nullable: true)]
     private ?bool $payed = null;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
@@ -30,6 +27,9 @@ class Orders
 
     #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrdersDetails::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $ordersDetails;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $created_at = null;
 
     public function __construct()
     {
@@ -118,4 +118,5 @@ class Orders
 
         return $this;
     }
+
 }

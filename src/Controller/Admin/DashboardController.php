@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Entity\Orders;
 use App\Entity\Product;
 use App\Entity\Category;
+use App\Entity\OrdersDetails;
 use App\Controller\Admin\DashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Controller\Admin\ProductCrudController;
@@ -61,6 +63,14 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
             MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
+        ]);
+
+        yield MenuItem::section('Orders');
+
+        yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
+            MenuItem::linkToCrud('Create Order', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Orders', 'fas fa-eye', Orders::class),
+            MenuItem::linkToCrud('Show Order Details', 'fas fa-eye', OrdersDetails::class)
         ]);
     }
 }

@@ -5,25 +5,6 @@
 
 {% block body %}
 
-<script>
-function confirmReservation() {
-  // Demander à l'utilisateur de confirmer sa réservation
-  var confirmation = confirm("Confirmer votre réservation ?");
-
-  // Si l'utilisateur clique sur "OK" (confirmer), rien ne se passe car le bouton
-  // est déjà configuré pour envoyer la commande à la base de données.
-  // Vous pouvez afficher un message de confirmation si vous le souhaitez.
-  if (confirmation) {
-    alert("Réservation confirmée !");
-  } else {
-    // Si l'utilisateur clique sur "Annuler", empêcher l'envoi du formulaire
-    // en annulant l'événement click.
-    event.preventDefault(); // Cela empêchera le formulaire de s'envoyer à la base de données.
-    alert("Réservation annulée !");
-  }
-}
-</script>
-
 <div class="container-fluid">
 
   <div class="row justify-content-center">
@@ -69,7 +50,7 @@ function confirmReservation() {
           <p>Prix total du panier:</p>
           <span>{{ total }} €</span>
         </div>
-        <button class="pay-btn fw-bold" type="submit" onclick="confirmReservation()"><a href="{{ path('app_add_order') }}">Réserver</a></button>
+        <button class="pay-btn fw-bold" type="submit" onclick="confirmReservation()">Réserver</button>
       </div>
     </div>
 
@@ -77,12 +58,15 @@ function confirmReservation() {
 </div>
 
 
-<div id="confirm-dialog" style="display: none;"">
+<div id="confirm-dialog" style="display: none;">
   <p>Souhaitez-vous confirmer votre réservation ?</p>
   <div class>
-    <button id="cancel-btn">Annuler</button>
-    <button id="confirm-btn">Confirmer</button>
+    <button id="cancel-btn" onclick="cancelReservation()">Annuler</button>
+    <button id="confirm-btn"><a href="{{ path('app_add_order') }}">Confirmer</a></button>
   </div>
 </div>
 
+  {% block javascripts %}
+    <script src="{{ asset('assets/js/addOrder.js') }}"></script>
+  {% endblock %}
 {% endblock %}
