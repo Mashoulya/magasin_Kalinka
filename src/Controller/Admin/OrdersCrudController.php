@@ -2,9 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Orders;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -25,7 +29,15 @@ class OrdersCrudController extends AbstractCrudController
             // DateTimeField::new('created_at')->setFormat('yyyy-MM-dd HH:mm:ss'),
             BooleanField::new('payed'),
             AssociationField::new('user'),
-            AssociationField::new('ordersDetails'),
+            TextField::new('user.UserName', 'Name'),
+            //AssociationField::new('ordersDetails'),
+            ArrayField::new('ordersDetails', 'Produits achetés')->OnlyOnDetail(),
         ];
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add('index', 'detail');
     }
 }

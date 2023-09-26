@@ -84,25 +84,5 @@ function validateForm() {
     var confirmMsg = document.querySelector(".confirm-msg");
     confirmMsg.style.display = "block";
 
-    return true; 
+    return true;
 }
-
-
-//massage du succès
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const registerForm = document.querySelector(".login-register-form");
-//   const confirmMsg = document.querySelector(".confirm-msg");
-//   const authMsg =document.querySelector(".auth-msg");
-
-//   registerForm.addEventListener("submit", function (event) {
-//       event.preventDefault(); // Empêche l'envoi du formulaire par défaut
-
-//       // Masquer le formulaire
-//       registerForm.style.display = "none";
-//       authMsg.style.display = "none";
-
-//       // Afficher le message de confirmation
-//       confirmMsg.style.display = "block";
-//   });
-// });

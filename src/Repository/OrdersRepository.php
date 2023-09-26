@@ -21,28 +21,21 @@ class OrdersRepository extends ServiceEntityRepository
         parent::__construct($registry, Orders::class);
     }
 
-//    /**
-//     * @return Orders[] Returns an array of Orders objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('o')
-//            ->andWhere('o.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('o.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    // Ajoutez cette méthode pour récupérer les nouvelles commandes non payées
+    public function findNonPayedOrders()
+    {
+        return $this->createQueryBuilder('o')
+            ->where('o.payed = false')
+            ->getQuery()
+            ->getResult();
+    }
 
-//    public function findOneBySomeField($value): ?Orders
-//    {
-//        return $this->createQueryBuilder('o')
-//            ->andWhere('o.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    // Ajoutez cette méthode pour récupérer les commandes payées
+    public function findPayedOrders()
+    {
+        return $this->createQueryBuilder('o')
+            ->where('o.payed = true')
+            ->getQuery()
+            ->getResult();
+    }
 }

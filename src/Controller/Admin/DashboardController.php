@@ -68,7 +68,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Orders');
 
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Create Order', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW),
+            // MenuItem::linkToCrud('Create Order', 'fas fa-plus', Orders::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Orders', 'fas fa-eye', Orders::class),
             MenuItem::linkToCrud('Show Order Details', 'fas fa-eye', OrdersDetails::class)
         ]);

@@ -64,7 +64,7 @@ Class RegisterController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_register');
+            return $this->redirectToRoute('app_login');
         }
 
         // Si le formulaire n'est pas soumis, affichez le formulaire

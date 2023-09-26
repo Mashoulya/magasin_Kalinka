@@ -17,14 +17,16 @@ class OrdersController extends AbstractController
     #[Route('/shop', name: 'app_orders')]
     public function listOrders(OrdersRepository $ordersRepository, EntityManagerInterface $entityManager): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-        
         // Récupérer toutes les commandes depuis la base de données
-        $ordersRepository = $entityManager->getRepository(Orders::class);
-        $orders = $ordersRepository->findAll();
+        $newOrders = $ordersRepository->findNonPayedOrders();
+        $payedOrders = $ordersRepository->findPayedOrders();
+
+        $orders = $payedOrders;
 
         return $this->render('shop/orders.html.twig', [
             'orders' => $orders,
+            'newOrders' => $newOrders,
+            'payedOrders' => $payedOrders,
         ]);
     }
     
@@ -37,7 +39,7 @@ class OrdersController extends AbstractController
         //le panier est vide
         if($cart === []){
            
-            return $this->redirectToRoute('app_index');
+            return $this->redirectToRoute('shopping_cart'); // soit app_index !!!
         }
 
         //le panier n'est pas vide
@@ -63,14 +65,16 @@ class OrdersController extends AbstractController
             $orders->addOrdersDetails($orderDetails);
         }
 
+        $orders->setPayed(false);
+
         //on péersiste et on flush
         $em->persist($orders);
         $em->flush();
 
         $session->remove('cart');
 
-        return $this->render('shop/orders.html.twig', [
-            'controller_name' => 'OrdersController',
-        ]);
+        $this->addFlash('order-success', 'Votre commande a été validée avec succès. Vous pouvez consulter les détails de votre commande depuis votre page "Mes commandes".');
+
+        return $this->redirectToRoute('shopping_cart');
     }
 }

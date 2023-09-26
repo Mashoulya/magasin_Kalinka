@@ -42,6 +42,12 @@
 
       {% endfor %}
 
+      {% for flash_message in app.flashes('order-success') %}
+        <div class="msg-order-success">
+          <p>{{ flash_message }}</p>
+        </div>
+      {% endfor %}
+
     </div>
 
     <div class="col-md-12 col-lg-4">

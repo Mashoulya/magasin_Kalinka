@@ -31,7 +31,7 @@ class OrdersDetails
     {
         return $this->id;
     }
-
+   
     public function getQuantity(): ?int
     {
         return $this->quantity;
@@ -79,4 +79,9 @@ class OrdersDetails
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->getProduct().' x'.$this->getQuantity();
+    }
+   
 }
