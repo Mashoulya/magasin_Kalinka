@@ -31,8 +31,19 @@ class ProductRepository extends ServiceEntityRepository
            ->setParameter('val', $value)
            ->orderBy('p.id', 'ASC')
            ->getQuery()
-           ->getResult()
-       ;
+           ->getResult();
+   }
+
+   public function findPopularProducts($limit = 10)
+   {
+    return $this->createQueryBuilder('p')
+        ->select('p.id, p.image, p.description, p.price, COUNT(od.id) as ordersCount')
+        ->join('p.ordersDetails', 'od')
+        ->groupBy('p.id')
+        ->orderBy('ordersCount', 'DESC')
+        ->setMaxResults($limit)
+        ->getQuery()
+        ->getResult();
    }
 
 //    public function findOneBySomeField($value): ?Product

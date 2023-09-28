@@ -636,7 +636,7 @@ footer{
   margin: 50px;
 }
 
-.error-email, .error-phone, .error-psw, .error-confirmPsw {
+.error-fN, .error-lN, .error-email, .error-phone, .error-psw, .error-confirmPsw {
   display: none;
   color: red;
   font-size: 12px;
@@ -836,16 +836,21 @@ footer{
   border-radius: 10px 10px 0 0;
   background-color: hsla(0, 0%, 85%, 0.3);
 }
-.ordersH6{
-  font-size: 30px;
-  color: var(--color-green);
+.dateOrder{
+  font-weight: 100;
+  font-size: 14px;
 }
-.header-h6 {
+.priceOrder{
+  font-style: italic;
+  font-weight: 100;
+  font-size: 14px;
+}
+.title-h6 {
   /* text-align: center; */
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-.header-h6 h6 {
+.title-h6 h6 {
   display: inline-block;
   position: relative;
   background: var(--color-green-1);
@@ -855,7 +860,7 @@ footer{
   font-size: 1.5rem;
   text-transform: uppercase;
 }
-.header-h6 h6::before {
+.title-h6 h6::before {
   content: "";
   position: absolute;
   left: 0;
@@ -865,7 +870,7 @@ footer{
   border-top: 3rem solid transparent;
   border-bottom: 3rem solid transparent;
 }
-.header-h6 h6::after {
+.title-h6 h6::after {
   content: "";
   position: absolute;
   right: 0;

@@ -22,19 +22,23 @@ class OrdersRepository extends ServiceEntityRepository
     }
 
     // Ajoutez cette méthode pour récupérer les nouvelles commandes non payées
-    public function findNonPayedOrders()
+    public function findNonPayedOrders($user)
     {
         return $this->createQueryBuilder('o')
-            ->where('o.payed = false')
+            ->where('o.user = :user')
+            ->andWhere('o.payed = false')
+            ->setParameter('user', $user)
             ->getQuery()
             ->getResult();
     }
 
     // Ajoutez cette méthode pour récupérer les commandes payées
-    public function findPayedOrders()
+    public function findPayedOrders($user)
     {
         return $this->createQueryBuilder('o')
-            ->where('o.payed = true')
+            ->where('o.user = :user')
+            ->andWhere('o.payed = true')
+            ->setParameter('user', $user)
             ->getQuery()
             ->getResult();
     }

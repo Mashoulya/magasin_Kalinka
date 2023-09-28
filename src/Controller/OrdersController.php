@@ -17,9 +17,15 @@ class OrdersController extends AbstractController
     #[Route('/shop', name: 'app_orders')]
     public function listOrders(OrdersRepository $ordersRepository, EntityManagerInterface $entityManager): Response
     {
+        // commandes correspondantes à l'utilisateur connecté
+        $user = $this->getUser();
+
+        if(!$user){
+            return $this->redirectToRoute('app-login');
+        }
         // Récupérer toutes les commandes depuis la base de données
-        $newOrders = $ordersRepository->findNonPayedOrders();
-        $payedOrders = $ordersRepository->findPayedOrders();
+        $newOrders = $ordersRepository->findNonPayedOrders($user);
+        $payedOrders = $ordersRepository->findPayedOrders($user);
 
         $orders = $payedOrders;
 
@@ -77,4 +83,5 @@ class OrdersController extends AbstractController
 
         return $this->redirectToRoute('shopping_cart');
     }
+    
 }

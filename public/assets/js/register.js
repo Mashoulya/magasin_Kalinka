@@ -1,13 +1,35 @@
 //INSCRIPTION
 
 // variables globales
+var firstNameInput = document.getElementById("firstName");
+var lastNameInput = document.getElementById("lastName");
 var phoneInput = document.getElementById("phone");
 var emailInput = document.getElementById("email");
 var passwordInput = document.getElementById("password");
 var confirmPasswordInput = document.getElementById("confirmPassword");
 
+var nameRegex = /^[A-Za-z-]+$/;
 var phoneRegex = /^0[1-9][0-9]{8}$/;
 var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+function validateFirstName(firstName) {
+  if (!nameRegex.test(firstName)) {
+      firstNameInput.classList.add("error");
+      document.querySelector(".error-fN").style.display = "block"; 
+  } else {
+    firstNameInput.classList.remove("error");
+    document.querySelector(".error-fN").style.display = "none"; 
+  } 
+}
+function validateLastName(lastName) {
+  if (!nameRegex.test(lastName)) {
+      lastNameInput.classList.add("error");
+      document.querySelector(".error-lN").style.display = "block"; 
+  } else {
+    lastNameInput.classList.remove("error");
+    document.querySelector(".error-lN").style.display = "none"; 
+  } 
+}
 
 function validatePhoneNumber(phoneNumber) {  
     if (!phoneRegex.test(phoneNumber)) {
@@ -43,11 +65,11 @@ function validatePasswordConfirmation(confirmPassword) {
   var password = passwordInput.value;
 
   if (confirmPassword !== password) {
-      confirmPasswordInput.classList.add("error");
-      document.querySelector(".error-confirmPsw").style.display = "block";
+    confirmPasswordInput.classList.add("error");
+    document.querySelector(".error-confirmPsw").style.display = "block";
   } else {
-      confirmPasswordInput.classList.remove("error");
-      document.querySelector(".error-confirmPsw").style.display = "none";
+    confirmPasswordInput.classList.remove("error");
+    document.querySelector(".error-confirmPsw").style.display = "none";
   }
 }
 

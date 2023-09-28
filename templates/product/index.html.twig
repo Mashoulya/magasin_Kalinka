@@ -17,7 +17,7 @@
             <span class="qte">1</span>
             <button class="logo-btn plus"><img src="../assets/img/plus-red24.png" alt=""></button>
           </div>
-          <button class="btn-add-card"><a href="{{ path('add', {id: product.id}) }}">Ajouter au panier</a></button>
+          <a href="{{ path('add', {id: product.id}) }}"><button class="btn-add-card">Ajouter au panier</button></a>
         </div>
 
        {% endfor %}

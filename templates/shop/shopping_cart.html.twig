@@ -22,17 +22,17 @@
       {% for item in data %}
           
       <div class="cart-item mb-3">
-        <img class="img-item" src="{{ item.product.image }}" alt="product1">
+        <img class="img-item" src="{{ asset('upload/images/products/' ~ item.product.image) }}" alt="product1">
           <div class="product-info">
-            <p>{{ item.product.description }}</p>
-            <span>Prix unité: {{ item.product.price }} €</span>
+            <p>{{ item.product.description|raw }}</p>
+            <span>Prix unité: {{ (item.product.price / 100)|number_format(2, ',', '.')}} €</span>
           </div>
           <div class="quantity-item d-flex align-items-center">
             <a href="{{ path('remove', {id: item.product.id}) }}"><img src="../assets/img/icon-minus-black32.png" alt=""></a>
             <span class="quantity">{{ item.quantity }}</span>
             <a href="{{ path('add', {id: item.product.id}) }}"><img src="../assets/img/icon-plus-black.png" alt=""></a>
           </div> 
-          <span class="total-price-item"><strong>Prix total: {{ item.quantity * item.product.price }} €</strong></span>
+          <span class="total-price-item"><strong>Prix total: {{ (item.quantity * item.product.price / 100)|number_format(2, ',', '.') }} €</strong></span>
           <a class="delete-icon" href="{{ path('delete', {id: item.product.id}) }}"><img src="../assets/img/icon-delete.png" alt=""></a>
       </div>
 
@@ -54,7 +54,7 @@
       <div class="total-price-cart d-flex flex-column mb-5">
         <div class="total-price d-flex justify-content-between fw-bold">
           <p>Prix total du panier:</p>
-          <span>{{ total }} €</span>
+          <span>{{ (total / 100)|number_format(2, ',', '.') }} €</span>
         </div>
         <button class="pay-btn fw-bold" type="submit" onclick="confirmReservation()">Réserver</button>
       </div>
@@ -68,7 +68,7 @@
   <p>Souhaitez-vous confirmer votre réservation ?</p>
   <div class>
     <button id="cancel-btn" onclick="cancelReservation()">Annuler</button>
-    <button id="confirm-btn"><a href="{{ path('app_add_order') }}">Confirmer</a></button>
+    <a href="{{ path('app_add_order') }}"><button id="confirm-btn">Confirmer</button></a>
   </div>
 </div>
 
