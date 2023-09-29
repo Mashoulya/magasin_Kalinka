@@ -53,7 +53,7 @@ class OrdersController extends AbstractController
 
         $orders->setUser($this->getUser());
         $orders->setReference(uniqid()); //       MODIFIER!!!
-
+        $orders->setCreatedAt(new \DateTimeImmutable());
 
         //on parcourt le panier pour créer les détails de la commande
         foreach($cart as $item => $quantity){

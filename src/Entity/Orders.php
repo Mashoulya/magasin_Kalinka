@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\OrdersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OrdersRepository::class)]
@@ -30,6 +31,9 @@ class Orders
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
+    private ?string $totalPrice = null;
 
     public function __construct()
     {
@@ -115,6 +119,18 @@ class Orders
                 $ordersDetail->setOrders(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTotalPrice(): ?string
+    {
+        return $this->totalPrice;
+    }
+
+    public function setTotalPrice(string $totalPrice): static
+    {
+        $this->totalPrice = $totalPrice;
 
         return $this;
     }

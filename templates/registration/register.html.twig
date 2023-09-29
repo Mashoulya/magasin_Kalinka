@@ -3,21 +3,96 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+  
+<div class="container-fluid">
+    <div class="row justify-content-center">
 
-    <h1>Register</h1>
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('app_index') }}">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Inscription</li>
+            </ol>
+        </nav>
+       
+        <div class="col-md-12 col-lg-6">
+                
+            <h4 class="h4 text-center">INSCRIPTION</h4>
+          
+            <p class="auth-msg text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
+  
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
 
-    {{ form_errors(registrationForm) }}
+            {{ form_errors(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            {{ form_start(registrationForm, {
+                'attr': {
+                'class': 'login-register-form display-flex flex-column justify-content-between mb-5',
+                'onsubmit': 'return validateForm()',
+                'method': 'post'
+                }
+            }) }}
+                <div class="form-group-over d-flex">
+                    <div class="form-group first-name">
+                        {{ form_row(registrationForm.firstName, {
+                            label: 'Prénom'
+                        }) }}
+                        <span class="error-fN">Le prénom doit contenir que des lettres</span>
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(registrationForm.lastName, {
+                            label: 'Nom'
+                        }) }}
+                        <span class="error-lN">Le nom doit contenir que des lettres</span>
+                    </div>
+                </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                <div class="form-group">
+                    {{ form_row(registrationForm.tel, {
+                        label: 'Téléphone'
+                    }) }}
+                    <span class="error-phone">Le numéro de téléphone doit commencer par 0 et contenir 10 chiffres</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.email, {
+                        label: 'Email'
+                    }) }}
+                    <span class="error-email">L'adresse e-mail n'est pas au bon format</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.plainPassword.first, {
+                        label: 'Mot de passe'
+                    }) }}
+                    <span class="error-psw">Le mot de passe doit contenir au moins 8 caractères, dont au moins une majuscule et un symbole</span>
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.plainPassword.second, {
+                        label: 'Confirmation de mot de passe'
+                    }) }}
+                    <span class="error-confirmPsw">Les mots de passe ne correspondent pas</span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="log-reg-btn" name="submit">S'inscrire</button>
+                </div>
+
+                <div class="agree-terms">
+                    {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'custom-checkbox-class'}}) }}
+                    <label class="custom-label-class">Accepter les conditions</label>
+                </div>
+                <span id="error-message"></span>
+            {{ form_end(registrationForm) }}
+
+        </div>
+    </div>
+</div>
+
+    {% block javascripts %}
+        <script src="{{ asset('assets/js/register.js') }}"></script>
+    {% endblock %}
 {% endblock %}
+

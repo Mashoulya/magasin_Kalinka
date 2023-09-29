@@ -19,3 +19,7 @@ app_user_info:
 app_orders:
     path: /app_orders
     controller: App\Controller\OrdersController::listOrders
+
+app_verify_email:
+    path: '/verify/email'
+    controller: 'App\Controller\RegistrationController::verifyUserEmail'

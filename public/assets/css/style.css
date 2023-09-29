@@ -629,13 +629,6 @@ footer{
 
 /* register */
 
-.confirm-msg{
-  display: none;
-  font-size: 18px;
-  text-align: center;
-  margin: 50px;
-}
-
 .error-fN, .error-lN, .error-email, .error-phone, .error-psw, .error-confirmPsw {
   display: none;
   color: red;
@@ -646,7 +639,11 @@ footer{
 .form-group-over .first-name{
   margin-right: 20px;
 }
-
+.custom-error-class {
+  color: red;
+  font-size: 14px;
+  /* Ajoutez d'autres styles personnalisés ici */
+}
 @media screen and (max-width: 430px) {
   .form-group{
     margin-bottom: 10px;

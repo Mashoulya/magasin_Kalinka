@@ -1,12 +1,12 @@
 //INSCRIPTION
 
 // variables globales
-var firstNameInput = document.getElementById("firstName");
-var lastNameInput = document.getElementById("lastName");
-var phoneInput = document.getElementById("phone");
-var emailInput = document.getElementById("email");
-var passwordInput = document.getElementById("password");
-var confirmPasswordInput = document.getElementById("confirmPassword");
+var firstNameInput = document.getElementById("registration_form_firstName");
+var lastNameInput = document.getElementById("registration_form_lastName");
+var phoneInput = document.getElementById("registration_form_tel");
+var emailInput = document.getElementById("registration_form_email");
+var passwordInput = document.getElementById("registration_form_plainPassword_first");
+var confirmPasswordInput = document.getElementById("registration_form_plainPassword_second");
 
 var nameRegex = /^[A-Za-z-]+$/;
 var phoneRegex = /^0[1-9][0-9]{8}$/;
@@ -96,15 +96,4 @@ function validateForm() {
     return false;
   }
   
-    //Toutes les conditions sont vraies!
-    var registerForm = document.querySelector(".login-register-form");
-    registerForm.style.display = "none";
-
-    var authMsg = document.querySelector(".auth-msg");
-    authMsg.style.display = "none";
-
-    var confirmMsg = document.querySelector(".confirm-msg");
-    confirmMsg.style.display = "block";
-
-    return true;
 }
