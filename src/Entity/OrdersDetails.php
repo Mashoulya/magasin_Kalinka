@@ -16,8 +16,8 @@ class OrdersDetails
     #[ORM\Column]
     private ?int $quantity = null;
 
-    #[ORM\Column]
-    private ?int $price = null;
+    #[ORM\Column(type: 'decimal', precision: 10, scale: 2)]
+    private ?float $price = null;
 
     #[ORM\ManyToOne(inversedBy: 'ordersDetails')]
     #[ORM\JoinColumn(nullable: false)]
@@ -44,12 +44,12 @@ class OrdersDetails
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): static
+    public function setPrice(?float $price): static
     {
         $this->price = $price;
 
@@ -83,5 +83,13 @@ class OrdersDetails
     {
         return $this->getProduct().' x'.$this->getQuantity();
     }
-   
+    
+    public function calculateLineTotal(): ?float
+    {
+        if ($this->quantity !== null && $this->price !== null) {
+            return $this->quantity * $this->price;
+        }
+    
+        return null;
+    }
 }

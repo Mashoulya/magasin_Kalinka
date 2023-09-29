@@ -40,40 +40,50 @@ class OrdersController extends AbstractController
     public function addOrder(SessionInterface $session, ProductRepository $productRepository, EntityManagerInterface $em): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
-        //on récupère le panier de la session
+        // on récupère le panier de la session
         $cart = $session->get('cart', []);
-        //le panier est vide
+        // le panier est vide
         if($cart === []){
            
             return $this->redirectToRoute('shopping_cart'); // soit app_index !!!
         }
 
-        //le panier n'est pas vide
+        // le panier n'est pas vide
         $orders = new Orders();
 
         $orders->setUser($this->getUser());
         $orders->setReference(uniqid()); //       MODIFIER!!!
         $orders->setCreatedAt(new \DateTimeImmutable());
 
-        //on parcourt le panier pour créer les détails de la commande
+        $totalPrice = 0.0;
+
+        // on parcourt le panier pour créer les détails de la commande
         foreach($cart as $item => $quantity){
             $orderDetails = new OrdersDetails();
-
             $product = $productRepository->find($item);
-
             $price = $product->getPrice();
-
-            //on crée le détail de commande
+    
+            // Prix total du panier
+            $totalCartPrice = $price * $quantity;
+            $totalPrice += $totalCartPrice;
+    
+            // Mise à jour du stock
+            $newStock = $product->getStock() - $quantity;
+            $product->setStock($newStock);
+    
+            // On crée le détail de commande
             $orderDetails->setProduct($product);
             $orderDetails->setPrice($price);
             $orderDetails->setQuantity($quantity);
-
+    
             $orders->addOrdersDetails($orderDetails);
         }
 
         $orders->setPayed(false);
 
-        //on péersiste et on flush
+        $orders->setTotalPrice($totalPrice);
+
+        // on péersiste et on flush
         $em->persist($orders);
         $em->flush();
 

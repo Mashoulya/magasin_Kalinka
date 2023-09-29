@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -28,6 +29,7 @@ class OrdersCrudController extends AbstractCrudController
             TextField::new('reference'),
             // DateTimeField::new('created_at')->setFormat('yyyy-MM-dd HH:mm:ss'),
             BooleanField::new('payed'),
+            MoneyField::new('totalPrice', 'Total price')->setCurrency('EUR'),
             AssociationField::new('user'),
             TextField::new('user.UserName', 'Name'),
             //AssociationField::new('ordersDetails'),

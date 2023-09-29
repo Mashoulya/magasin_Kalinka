@@ -44,6 +44,9 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: OrdersDetails::class)]
     private Collection $ordersDetails;
 
+    #[ORM\Column]
+    private ?int $stock = null;
+
     public function __construct()
     {
         $this->ordersDetails = new ArrayCollection();
@@ -180,6 +183,18 @@ class Product
                 $ordersDetail->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(int $stock): static
+    {
+        $this->stock = $stock;
 
         return $this;
     }

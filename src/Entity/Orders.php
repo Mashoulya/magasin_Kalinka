@@ -33,7 +33,7 @@ class Orders
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
-    private ?string $totalPrice = null;
+    private float $totalPrice = 0.0;
 
     public function __construct()
     {
@@ -123,12 +123,12 @@ class Orders
         return $this;
     }
 
-    public function getTotalPrice(): ?string
+    public function getTotalPrice(): ?float
     {
         return $this->totalPrice;
     }
 
-    public function setTotalPrice(string $totalPrice): static
+    public function setTotalPrice(?float $totalPrice): static
     {
         $this->totalPrice = $totalPrice;
 

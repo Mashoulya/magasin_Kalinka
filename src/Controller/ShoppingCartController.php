@@ -34,27 +34,34 @@ class ShoppingCartController extends AbstractController
 
     #[Route('/add/{id}', name: 'add')]
     public function add(Product $product, SessionInterface $session)
-    {
-        //on récupère id du produit
-        $id = $product->getId();
+{
+    // Récupérer le produit et son stock
+    $id = $product->getId();
+    $stock = $product->getStock();
 
-        //on récupère le panier existant
-        $cart = $session->get('cart', []);
+    // Récupérer le panier existant
+    $cart = $session->get('cart', []);
 
-        //on ajoute le produit dan sle panier s'il n'y est pas encore
-        //sinon on incrémente sa qte
-        if(empty($cart[$id])){
-            $cart[$id] = 1;
-        }else{
+    // Vérifier si le produit est déjà dans le panier
+    if (isset($cart[$id])) {
+        // Vérifier si le stock est suffisant
+        if ($cart[$id] < $stock) {
+            // Incrémenter la quantité dans le panier
             $cart[$id]++;
+            $session->set('cart', $cart);
+        } else {
+            // Afficher un message d'erreur ou rediriger vers une page d'erreur de stock insuffisant
+            // Vous pouvez également gérer cette situation de manière plus explicite
         }
-
+    } else {
+        // Ajouter le produit au panier avec une quantité de 1
+        $cart[$id] = 1;
         $session->set('cart', $cart);
-
-        //on redirige vers la page panier
-        return $this->redirectToRoute('shopping_cart');
-        
     }
+
+    // Rediriger vers la page panier
+    return $this->redirectToRoute('shopping_cart');
+}
 
     #[Route('/remove/{id}', name: 'remove')]
     public function remove(Product $product, SessionInterface $session)
