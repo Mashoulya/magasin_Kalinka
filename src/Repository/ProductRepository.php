@@ -37,7 +37,7 @@ class ProductRepository extends ServiceEntityRepository
    public function findPopularProducts($limit = 10)
    {
     return $this->createQueryBuilder('p')
-        ->select('p.id, p.image, p.description, p.price, COUNT(od.id) as ordersCount')
+        ->select('p.id, p.image, p.description, p.price, COUNT(od.id) as ordersCount, p.stock')
         ->join('p.ordersDetails', 'od')
         ->groupBy('p.id')
         ->orderBy('ordersCount', 'DESC')

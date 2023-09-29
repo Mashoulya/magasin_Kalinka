@@ -11,7 +11,9 @@
             <p>{{ product.description|raw }}</p>
           </div>
           <div class="product-price text-center fw-bold">{{ (product.price / 100)|number_format(2, ',', '.') }} €</div>
-          <p class="product-stock"><span class="red-point"></span>Épuisé</p>
+            {% if product.stock == 0 %}
+              <p class="product-stock"><span class="red-dot">&#8226;</span>Épuisé</p>
+            {% endif %}
           <a href="{{ path('add', {id: product.id}) }}"><button class="btn-add-card">Ajouter au panier</button></a>
         </div>
 

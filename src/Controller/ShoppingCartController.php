@@ -34,34 +34,33 @@ class ShoppingCartController extends AbstractController
 
     #[Route('/add/{id}', name: 'add')]
     public function add(Product $product, SessionInterface $session)
-{
-    // Récupérer le produit et son stock
-    $id = $product->getId();
-    $stock = $product->getStock();
+    {
+    
+        $id = $product->getId();
+        $stock = $product->getStock();
 
-    // Récupérer le panier existant
-    $cart = $session->get('cart', []);
+        // on récupère le panier existant
+        $cart = $session->get('cart', []);
 
-    // Vérifier si le produit est déjà dans le panier
-    if (isset($cart[$id])) {
-        // Vérifier si le stock est suffisant
-        if ($cart[$id] < $stock) {
-            // Incrémenter la quantité dans le panier
+    
+        if (isset($cart[$id])) {
+            // si le stock est suffisant
+            if ($cart[$id] < $stock) {
+           
             $cart[$id]++;
             $session->set('cart', $cart);
-        } else {
-            // Afficher un message d'erreur ou rediriger vers une page d'erreur de stock insuffisant
-            // Vous pouvez également gérer cette situation de manière plus explicite
+            } else {
+                // Stock insuffisant, on fait rien
+            }
+        } elseif ($stock > 0) {
+            // Ajouter le produit au panier avec une qté de 1 si le stock est supérieur à zéro
+            $cart[$id] = 1;
+            $session->set('cart', $cart);
         }
-    } else {
-        // Ajouter le produit au panier avec une quantité de 1
-        $cart[$id] = 1;
-        $session->set('cart', $cart);
-    }
 
-    // Rediriger vers la page panier
-    return $this->redirectToRoute('shopping_cart');
-}
+        // Rediriger vers la page panier
+        return $this->redirectToRoute('shopping_cart');
+    }
 
     #[Route('/remove/{id}', name: 'remove')]
     public function remove(Product $product, SessionInterface $session)

@@ -21,18 +21,19 @@ class OrdersRepository extends ServiceEntityRepository
         parent::__construct($registry, Orders::class);
     }
 
-    // Ajoutez cette méthode pour récupérer les nouvelles commandes non payées
+    // les nouvelles commandes non payées
     public function findNonPayedOrders($user)
     {
         return $this->createQueryBuilder('o')
             ->where('o.user = :user')
             ->andWhere('o.payed = false')
             ->setParameter('user', $user)
+            ->orderBy('o.created_at', 'DESC')
             ->getQuery()
             ->getResult();
     }
 
-    // Ajoutez cette méthode pour récupérer les commandes payées
+    // les commandes payées
     public function findPayedOrders($user)
     {
         return $this->createQueryBuilder('o')
