@@ -31,7 +31,7 @@
             {% if product.stock == 0 %}
               <p class="product-stock"><span class="red-dot">&#8226;</span>Épuisé</p>
             {% endif %}
-          <a href="{{ path('add', {id: product.id}) }}"><button class="btn-add-card">Ajouter au panier</button></a>
+          <button class="btn-add-card" data-product-id="{{ product.id }}" data-product-stock="{{ product.stock }}">Ajouter au panier</button>
         </div>
 
         {% endfor %}

@@ -35,14 +35,12 @@ class ShoppingCartController extends AbstractController
     #[Route('/add/{id}', name: 'add')]
     public function add(Product $product, SessionInterface $session)
     {
-    
         $id = $product->getId();
         $stock = $product->getStock();
 
         // on récupère le panier existant
         $cart = $session->get('cart', []);
 
-    
         if (isset($cart[$id])) {
             // si le stock est suffisant
             if ($cart[$id] < $stock) {
