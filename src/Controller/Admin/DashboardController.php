@@ -58,11 +58,13 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Show Categories', 'fas fa-eye', Category::class)
         ]);
 
-        yield MenuItem::section('Users');
+        yield MenuItem::section('Users')->setPermission('ROLE_ADMIN');
 
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)
+            MenuItem::linkToCrud('Create User', 'fas fa-plus', User::class)
+                ->setAction(Crud::PAGE_NEW)
+                ->setPermission('ROLE_ADMIN'),
+            MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class)->setPermission('ROLE_ADMIN'),
         ]);
 
         yield MenuItem::section('Orders');

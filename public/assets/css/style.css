@@ -454,11 +454,11 @@ h3{
   }
   .product-card{
     width: 140px;
-    height: 300px;
+    height: 280px;
     margin-right: 10px;
   }  
   .card-img-top{
-    height: 100px;
+    height: 80px;
   }
   .product-card p,
   .product-price,
