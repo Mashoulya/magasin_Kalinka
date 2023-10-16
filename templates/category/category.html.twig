@@ -4,19 +4,21 @@
 
 {% block body %}
 
-  <div class="burger-icon" onclick="toggleMenu()">
-    <img src="../img/icon-menu-burger30.png" alt="">
+  <div class="container-fluid d-flex flex-column mb-3">
+    <div id="btn-menu" class="btn-menu text-center">Menu</div>
+    
+    <div class="d-flex mt-3">
+      {% include 'menu.html.twig' %}
+      
+      <div class="content-box">    
+        {% include 'product/index.html.twig' %}
+      </div>
+    </div>
+    
   </div>
-    
-  <div class="container-fluid d-flex mb-4">
-    
-    {% include 'menu.html.twig' %}
 
-    <div class="content-box">
-    
-    {% include 'product/index.html.twig' %}
-
-    </div> 
-  </div>
+    {% block javascripts %}
+      <script src="{{ asset('assets/js/menu.js') }}" ></script>
+    {% endblock %}
 
 {% endblock %}

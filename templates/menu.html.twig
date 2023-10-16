@@ -1,12 +1,12 @@
-<nav id="menu-box" class="menu-box">
+<nav class="menu-box">
       <div class="menu-title d-flex align-items-center justify-content-center">
-        <h2 class="fw-bold">Menu</h2>
+        <h2 class="fw-bold">Produits</h2>
       </div>
       <ul class="menu-list">
         {% for category in categories %}
             <li><a class="menu-li" href="{{ path('app_category', {id: category.id}) }}">{{ category.name }}</a></li>
         {% endfor %}
-    </ul>
+      </ul>
       <div class="menu-end">
         <div class="menu-title-end d-flex justify-content-center align-items-center">
           <h2 class="fw-bold">Contact</h2>
@@ -18,3 +18,4 @@
         </ul>    
       </div>
 </nav>
+<img class="croix" src="../assets/img/cancel-30.png" alt="" width="30px" height="30px">

@@ -31,7 +31,9 @@ class RegistrationFormType extends AbstractType
                     'required' => 'required'
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(),
+                    new Assert\NotBlank([
+                        'message' => 'Ce champ ne peut pas être vide.',
+                    ]),
                     new Assert\Regex([
                         'pattern' => '/^[A-Za-zÀ-ÖØ-öø-ÿ\-]+$/',
                         'message' => 'Le prénom ne peut contenir que des lettres et un trait d\'union.'
@@ -45,7 +47,9 @@ class RegistrationFormType extends AbstractType
                     'required' => 'required'
                 ],
                 'constraints' => [
-                    new Assert\NotBlank(),
+                    new Assert\NotBlank([
+                        'message' => 'Ce champ ne peut pas être vide.',
+                    ]),
                     new Assert\Regex([
                         'pattern' => '/^[A-Za-zÀ-ÖØ-öø-ÿ\-]+$/',
                         'message' => 'Le nom ne peut contenir que des lettres et un trait d\'union.'
@@ -74,7 +78,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Email(),
+                    new Assert\Email(),
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [

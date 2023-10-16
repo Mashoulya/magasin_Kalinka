@@ -4,76 +4,83 @@
 
 {% block body %}
 
-<!-- NAV-MENU -->
- 
-<div class="container-fluid d-flex mb-4">
-  
- {% include 'menu.html.twig' %}
-          
-<!-- CONTENT -->
+<div class="container-fluid d-flex flex-column mb-3">
 
-<div class="content-box">
+<div id="btn-menu" class="btn-menu text-center">Menu</div>
   
-  <h3 class="text-center fw-bold mb-5">Produits populaires</h3>
+<div class="d-flex mt-3">
+  {% include 'menu.html.twig' %}
+            
+  <!-- CONTENT -->
   
-  <div class="layer">    
-    <div class="viewport">
-      <div class="wrapper cards-box d-flex">
-
-        {% for product in mostPopularProducts %}
-      
-        <div class="product-card d-flex flex-column">
-          <img src="{{ asset('upload/images/products/' ~ product.image) }}" alt="" class="card-img-top img-fluid">
-          <div class="product-details p-1">
-            <p class="text-center">{{ product.description|raw}}</p>
+  <div class="content-box">
+    
+    <h3 class="text-center fw-bold mb-3">Produits populaires</h3>
+    
+    <div class="layer">    
+      <div class="viewport">
+        <div class="wrapper cards-box d-flex">
+  
+          {% for product in mostPopularProducts %}
+        
+          <div class="product-card d-flex flex-column">
+            <img src="{{ asset('upload/images/products/' ~ product.image) }}" alt="" class="card-img-top img-fluid">
+            <div class="product-details text-center">
+              <span class="prod-name">{{ product.name }}</span>
+              <span class="prod-descr">{{ product.description|raw }}</span>
+            </div>
+            <div class="product-price text-center fw-bold">{{ (product.price / 100)|number_format(2, ',', '.') }} €</div>
+              {% if product.stock == 0 %}
+                <span class="product-stock"><span class="red-dot">&#8226;</span>Épuisé</span>
+                 {% else %}
+                <span class="product-stock"><span class="invisible-dot">&#8226;</span></span>
+              {% endif %}
+            <button class="btn-add-card" data-product-id="{{ product.id }}" data-product-stock="{{ product.stock }}">
+            Ajouter au panier
+            </button>
           </div>
-          <div class="product-price text-center fw-bold">{{ (product.price / 100)|number_format(2, ',', '.') }} €</div>
-            {% if product.stock == 0 %}
-              <p class="product-stock"><span class="red-dot">&#8226;</span>Épuisé</p>
-            {% endif %}
-          <button class="btn-add-card" data-product-id="{{ product.id }}" data-product-stock="{{ product.stock }}">Ajouter au panier</button>
+  
+          {% endfor %}
+  
         </div>
-
-        {% endfor %}
-
       </div>
+      
+      <button class="pre-btn"><img src="../assets/img/arrow30.png" alt=""></button>
+      <button class="nxt-btn"><img src="../assets/img/arrow30.png" alt=""></button>
     </div>
     
-    <button class="pre-btn"><img src="../assets/img/arrow30.png" alt=""></button>
-    <button class="nxt-btn"><img src="../assets/img/arrow30.png" alt=""></button>
-  </div>
-  
-  <h4 class="p-4 text-center">Nous proposons un large choix de produits de différents pays dans notre magasin</h4>
-  
-  <div class="lands">
+    <h4 class="p-4 text-center">Nous proposons un large choix de produits de différents pays dans notre magasin</h4>
     
-    <div class="land">
-      <img src="../assets/img/Armenia.png" alt="">
-      <p>Arménie</p>
+    <div class="lands">
+      
+      <div class="land">
+        <img src="../assets/img/Armenia.png" alt="">
+        <p>Arménie</p>
+      </div>
+    
+      <div class="land">
+        <img src="../assets/img/Belarus.png" alt="">
+        <p>Biélorussie</p>
+      </div>
+    
+      <div class="land">
+        <img src="../assets/img/Georgia.png" alt="">
+        <p>Georgie</p>
+      </div>
+    
+      <div class="land">
+        <img src="../assets/img/Russia.png" alt="">
+        <p>Russie</p>
+      </div>
+    
+      <div class="land">
+        <img src="../assets/img/Ukraine.png" alt="">
+        <p>Ukraine</p>
+      </div>
+    
     </div>
-  
-    <div class="land">
-      <img src="../assets/img/Belarus.png" alt="">
-      <p>Biélorussie</p>
-    </div>
-  
-    <div class="land">
-      <img src="../assets/img/Georgia.png" alt="">
-      <p>Georgie</p>
-    </div>
-  
-    <div class="land">
-      <img src="../assets/img/Russia.png" alt="">
-      <p>Russie</p>
-    </div>
-  
-    <div class="land">
-      <img src="../assets/img/Ukraine.png" alt="">
-      <p>Ukraine</p>
-    </div>
-  
+    
   </div>
-  
 </div>
 
 </div>

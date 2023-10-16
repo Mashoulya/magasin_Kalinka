@@ -1,16 +1,16 @@
 // GESTION DES CARTES
 
-var left = document.querySelector('.pre-btn');
-var right = document.querySelector('.nxt-btn');
-var viewport = document.querySelector('.viewport');
-var cardWidth = 240; // Исходная ширина карточек
+let left = document.querySelector('.pre-btn');
+let right = document.querySelector('.nxt-btn');
+let viewport = document.querySelector('.viewport');
+let cardWidth = 240; // Исходная ширина карточек
 
 // Функция для обновления ширины карточек в зависимости от ширины экрана
 function updateCardWidth() {
   if (window.innerWidth <= 650) { // Примерное значение для сужения экрана
-    cardWidth = 180; // Изменяем ширину карточек для сужения экрана
+    cardWidth = 160; // Изменяем ширину карточек для сужения экрана
   } else {
-    cardWidth = 250; // Возвращаем исходную ширину карточек
+    cardWidth = 240; // Возвращаем исходную ширину карточек
   }
 }
 
@@ -37,16 +37,23 @@ window.addEventListener('load', updateCardWidth);
 window.addEventListener('resize', updateCardWidth);
 
 
-// BURGER
+// MENU
 
-function toggleMenu() {
-  var menuBox = document.getElementById("menu-box");
-  if (menuBox.style.display === "none" || menuBox.style.display === "") {
-    menuBox.style.display = "block";
-  } else {
-    menuBox.style.display = "none";
-  }
-}
+const btnMenu = document.querySelector(".btn-menu");
+const menuBox = document.querySelector(".menu-box");
+const croix = document.querySelector(".croix");
+
+btnMenu.addEventListener("click", function () {
+
+  menuBox.style.display = "block";
+  croix.style.display = "block";
+});
+
+croix.addEventListener("click", function () {
+  
+  menuBox.style.display = "none";
+  croix.style.display = "none";
+});
 
 //GESTION d'AJOUT
 

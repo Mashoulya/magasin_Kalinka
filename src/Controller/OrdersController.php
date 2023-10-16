@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class OrdersController extends AbstractController
 {
-    #[Route('/shop', name: 'app_orders')]
+    #[Route('/my_order', name: 'app_orders')]
     public function listOrders(OrdersRepository $ordersRepository, EntityManagerInterface $entityManager): Response
     {
         // commandes correspondantes à l'utilisateur connecté
@@ -83,7 +83,7 @@ class OrdersController extends AbstractController
 
         $orders->setTotalPrice($totalPrice);
 
-        // on péersiste et on flush
+        // on pérsiste et on flush
         $em->persist($orders);
         $em->flush();
 

@@ -25,8 +25,6 @@ class CategoryController extends AbstractController
      
         $products = $productRepository->findByCategoryId($id);
 
-       
-        
         
         return $this->render('category/category.html.twig', [
             'controller_name' => 'CategoryController',

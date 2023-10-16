@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ShoppingCartController extends AbstractController
 {
-    #[Route('/shop', name: 'shopping_cart')]
+    #[Route('/cart', name: 'shopping_cart')]
     public function index(SessionInterface $session, ProductRepository $productRepository): Response
     {
         $cart = $session->get('cart', []);
@@ -51,7 +51,8 @@ class ShoppingCartController extends AbstractController
                 // Stock insuffisant, on fait rien
             }
         } elseif ($stock > 0) {
-            // Ajouter le produit au panier avec une qté de 1 si le stock est supérieur à zéro
+            // Ajouter le produit au panier avec une qté de 1
+            // si le stock est supérieur à zéro
             $cart[$id] = 1;
             $session->set('cart', $cart);
         }

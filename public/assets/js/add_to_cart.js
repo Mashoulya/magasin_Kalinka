@@ -6,14 +6,14 @@ addButtons.forEach(button => {
         const productStock = this.getAttribute('data-product-stock');
         
         if (productStock > 0) {
-            // Effectuez la requête GET vers la route appropriée
+            // la requête GET vers la route d'ajout du produit
             fetch(`/add/${productId}`)
                 .then(response => {
                     if (response.status === 200) {
-                        // L'ajout au panier a été effectué avec succès
+                        // L'ajout au panier avec succès
                         alert('Produit ajouté au panier avec succès.');
                     } else {
-                        // Gérez d'autres erreurs ici si nécessaire
+                        // erreurs
                         alert('Une erreur est survenue lors de l\'ajout au panier.');
                     }
                 })
@@ -21,7 +21,7 @@ addButtons.forEach(button => {
                     alert('Une erreur est survenue lors de l\'ajout au panier.', error);
                 });
         } else {
-            // Le produit est épuisé en stock, affichez le message d'erreur
+            // msg d'erreur si le produit n'est plus en stock
             alert('Le produit est épuisé en stock.');
         }
     });
