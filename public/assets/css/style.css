@@ -69,7 +69,7 @@ h1{
   margin-left: 240px;
 }
 
-.header-search-icons p{
+.title2{
   font-family: 'SansitaOne';
   font-size: 28px;
   color: var(--color-orange);  
@@ -113,32 +113,38 @@ h1{
   height: 35px;
   cursor: pointer;
 }
-.search-bar, .profil-icons img{
-  margin-right: 20px;
+.search-bar, .profil-icons img, .sayHi{
+  margin: 0 10px 0 10px;
+}
+.sayHi{
+  font-style: italic;
 }
 
-@media screen and (max-width:1345px) {
+@media screen and (max-width:1410px) {
   .header-content{
     margin-left: 220px;
   }
   h1{
     margin-left: 220px;
-  }
-  .contact-item{
-    font-size: 12px;
-    margin: 5px;
-  }  
-  .header-search-icons p{
-    font-size: 26px;
+  } 
+  .title2{
+    font-size: 24px;
+    margin-bottom: 10px;
   }
 }
 
-@media screen and (max-width:1260px) {
-  h1{
-    font-size: 40px;
+@media screen and (max-width:1125px) {
+  .header{
+    height: 25vh;
   }
-  .header-search-icons p{
-    font-size: 20px;
+  h1{
+    font-size: 42px;
+  }
+  .title2{
+    font-size: 22px;
+  }
+  .contact-item{
+    font-size: 16px;
   }
   .header-content{
     margin-bottom: 20px;
@@ -148,8 +154,28 @@ h1{
     flex-direction: column;
   }
 }
-
+@media screen and (max-width: 1024px) and (max-height: 600px){
+  .header{
+    height: 40vh;
+  }
+  h1{
+    font-size: 40px;
+  }
+  .title2{
+    font-size: 20px;
+  }
+}
 @media screen and (max-width:820px) {
+  h1{
+    font-size: 40px;
+  }
+  .title2{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width:760px) {
   .header{
     background-image: none;
     background-color: #000000;
@@ -167,7 +193,7 @@ h1{
   .contact-item{
     display: none;
   }
-  .header-search-icons p{
+  .title2{
     display: none;
   }
   .search-bar {
@@ -194,7 +220,7 @@ h1{
   .search-icons{
     flex-direction:column-reverse;
     justify-content:space-between;
-    gap: 10px;   
+    gap: 15px;   
   }
   .search-bar {
     width: 70%;
@@ -203,16 +229,18 @@ h1{
   .profil-icons{
     align-items: center;
   }
-  .search-bar, .profil-icons img{
+  /* .search-bar, .profil-icons img{
     margin-right: 0;
-  }
+  } */
   .profil-icons img{
     margin-left: 10px;
     width: 30px;
     height: 30px;
   }
+  .sayHi{
+    font-size: 11px;
+  }
 }
-
 .log-reg{
   display: flex;
   background-color: #000000;
@@ -242,7 +270,6 @@ h1{
 .breadcrumb-item a{
   color: black;
 }
-
 /* MENU */
 .croix{
   display: none;
@@ -310,7 +337,7 @@ h2{
   text-align: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1464px) {
   .btn-menu{
     display: block;
   }
@@ -319,7 +346,6 @@ h2{
     width: 240px;
     position:absolute;
     z-index: 9;
-    margin-left: 0;
     overflow: scroll;
   }
   .menu-box ul li{
@@ -327,18 +353,18 @@ h2{
   }
   .croix{
     position: absolute;
-    margin-left: 240px;
+    margin-left: 260px;
   }
 }
 
 @media screen and (max-width:500px){
   .menu-box{
     width: 220px;
-    height: 420px;
+    /* height: 420px; */
   }
   .croix{
     position: absolute;
-    margin-left: 220px;
+    margin-left: 240px;
   }
   .menu-end{
     display: block;
@@ -396,7 +422,7 @@ h3{
   background-color: rgb(255, 255, 255);
   border-radius: 10px 10px 0 0;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-  margin-right: 20px;
+  margin: 10px;
 }
 .card-img-top{
   border-radius: 10px 10px 0 0;
@@ -468,9 +494,9 @@ h3{
     height: 310px;
   }
   .product-card{
-    width: 160px;
-    height: 240px;
-    margin-right: 10px;
+    width: 170px;
+    height: 260px;
+    margin: 5px;
   }  
   .card-img-top{
     height: 80px;
@@ -664,6 +690,9 @@ footer{
   /* Ajoutez d'autres styles personnalisés ici */
 }
 @media screen and (max-width: 430px) {
+  body{
+    font-size: 14px;
+  }
   .form-group{
     margin-bottom: 10px;
   }
@@ -683,7 +712,6 @@ footer{
  .form-group input{
   padding: 5px;
  }
-
 }
 
 

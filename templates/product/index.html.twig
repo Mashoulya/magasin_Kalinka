@@ -1,10 +1,10 @@
-<h3 class="text-center fw-bold mb-3">{{ category.name }}</h3>
+<h3 class="text-center fw-bold m-3">{{ category.name }}</h3>
       
   <div class="cards-box d-flex flex-wrap justify-content-center">
       
     {% for product in products %}
 
-      <div class="product-card d-flex flex-column mb-3">
+      <div class="product-card d-flex flex-column">
         <img src="{{ asset('upload/images/products/' ~ product.image) }}" alt="" class="card-img-top img-fluid">
         <div class="product-details text-center">
           <span class="prod-name">{{ product.name }}</span>
@@ -14,7 +14,7 @@
           {% if product.stock == 0 %}
             <span class="product-stock"><span class="red-dot">&#8226;</span>Épuisé</span>
             {% else %}
-            <span class="product-stock">&nbsp;</span>
+            <span class="product-stock"><span class="invisible-dot">&#8226;</span></span>
           {% endif %}
         <button class="btn-add-card" data-product-id="{{ product.id }}" data-product-stock="{{ product.stock }}">
         Ajouter au panier
@@ -25,6 +25,3 @@
   
   </div>
 
-{% block javascripts %}
-        <script src="{{ asset('assets/js/add_to_cart.js') }}"></script>
-{% endblock %}

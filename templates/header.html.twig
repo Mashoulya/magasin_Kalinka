@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="header-content d-flex flex-column justify-content-right">
 
     <div class="header-search-icons d-flex">
-      <p class="me-auto">Épicerie et saveurs des pays de l'est</p>
+      <div class="title2 me-auto align-self-center">Épicerie et saveurs des pays de l'est</div>
 
-        <div class="search-icons d-flex justify-content-between">
+        <div class="search-icons d-flex justify-content-between align-items-center">
               
           <div class="search-bar">
             <input type="text" id="search-input" placeholder="Rechercher">
@@ -57,8 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
               
           <div class="profil-icons d-flex">
             <div class="mobile-title me-auto">Kalinka</div>
-              <div>
-                <a href=""><img src="../assets/img/icons8-heart-60.png" alt="heart" class="heart" id="prof-icon"></a>
+              <div class="sayHi align-self-center">
+                {% if app.user %}
+                <div>Bonjour, {{ app.user.getFirstName() }} !</div>
+                {% else %}
+                <div>Connectez-vous !</div>
+                {% endif %}
               </div>
               <div>
                 <img src="../assets/img/icons8-user-48.png" alt="user" class="user" id="prof-icon">
@@ -69,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
     </div>
-
   </div>
 
   <div class="log-reg align-items-center justify-content-center">
@@ -84,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="user-log-reg d-flex flex-column">
           <a href="{{ path('app_user_info') }}"><img src="../assets/img/user-48.png" alt=""> Mon profil</a>
           <a href="app_orders"><img src="../assets/img/icon-box48.png" alt=""> Mes commandes</a>
-          <a href="#"><img src="../assets/img/icons8-heart-60.png" alt=""> Les produits souhaités</a>
+          {# <a href="#"><img src="../assets/img/icons8-heart-60.png" alt=""> Les produits souhaités</a> #}
           <a href="{{ path('app_logout') }}"><img src="../assets/img/icon-exit48.png" alt=""> Déconnexion</a>
         </div>
       {% endif %}

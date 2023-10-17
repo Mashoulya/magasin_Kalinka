@@ -3,39 +3,23 @@
 let left = document.querySelector('.pre-btn');
 let right = document.querySelector('.nxt-btn');
 let viewport = document.querySelector('.viewport');
-let cardWidth = 240; // Исходная ширина карточек
+let cardWidth = 240;
 
-// Функция для обновления ширины карточек в зависимости от ширины экрана
-function updateCardWidth() {
-  if (window.innerWidth <= 650) { // Примерное значение для сужения экрана
-    cardWidth = 160; // Изменяем ширину карточек для сужения экрана
-  } else {
-    cardWidth = 240; // Возвращаем исходную ширину карточек
-  }
-}
-
-// Обработчик для левой стрелки
+// flèche gauche
 left.addEventListener('click', function() {
-   updateCardWidth(); // Обновляем ширину карточек перед прокруткой
    viewport.scrollBy({
       left: -cardWidth,
       behavior: 'smooth'
    });
 });
 
-// Обработчик для правой стрелки
+// flèche droite
 right.addEventListener('click', function() {
-   updateCardWidth(); // Обновляем ширину карточек перед прокруткой
    viewport.scrollBy({
       left: cardWidth,
       behavior: 'smooth'
    });
 });
-
-// Обновляем ширину карточек при загрузке страницы и изменении размера окна
-window.addEventListener('load', updateCardWidth);
-window.addEventListener('resize', updateCardWidth);
-
 
 // MENU
 
