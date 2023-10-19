@@ -1,6 +1,6 @@
 <nav class="menu-box m-3">
       <div class="menu-title d-flex align-items-center justify-content-center">
-        <h2 class="fw-bold">Produits</h2>
+        <div class="fw-bold">Produits</div>
       </div>
       <ul class="menu-list">
         {% for category in categories %}
@@ -9,7 +9,7 @@
       </ul>
       <div class="menu-end">
         <div class="menu-title-end d-flex justify-content-center align-items-center">
-          <h2 class="fw-bold">Contact</h2>
+          <div class="fw-bold">Contact</div>
         </div>
         <ul>
           <li><img class="contact-icon" src="../assets/img/icon-phone48.png" alt="telephone"> 0102030405</li>
@@ -18,4 +18,8 @@
         </ul>    
       </div>
 </nav>
-<img class="croix mt-3" src="../assets/img/cancel-30.png" alt="" width="30px" height="30px">
+<img class="cancel mt-3" src="../assets/img/cancel-30.png" alt="cancel" width="30px" height="30px">
+
+{% block javascripts %}
+  <script src="{{ asset('assets/js/menu.js') }}"></script>
+{% endblock %}

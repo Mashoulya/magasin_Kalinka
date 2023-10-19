@@ -1,5 +1,4 @@
-<h3 class="text-center fw-bold m-3">{{ category.name }}</h3>
-      
+<h3 class="text-center fw-bold m-3">{{ category.name }}</h3>   
   <div class="cards-box d-flex flex-wrap justify-content-center">
       
     {% for product in products %}
@@ -22,6 +21,7 @@
       </div>
 
       {% endfor %}
-  
   </div>
-
+  {% block javascripts %}
+    <script src="{{ asset('assets/js/add_to_cart.js') }}"></script>
+  {% endblock %}

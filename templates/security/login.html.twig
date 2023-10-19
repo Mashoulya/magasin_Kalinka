@@ -20,16 +20,16 @@
 
     <p class="auth-msg text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
 
-    <form class="login-register-form display-flex flex-column justify-content-between mb-5" method="post" action="{{ path('app_login') }}">
+    <form class="login-register-form display-flex flex-column justify-content-between mb-5" method="post" action="{{ path('app_login') }}" name="login">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-        {% if app.user %}
+        {# {% if app.user %}
             <div class="mb-3">
                 You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('security_logout') }}">Logout</a>
             </div>
-        {% endif %}
+        {% endif %} #}
 
         <div class="form-group">
             <label for="userEmail">Email</label>
@@ -45,7 +45,7 @@
            value="{{ csrf_token('authenticate') }}">
 
         <div class="form-group">
-            <button class="log-reg-btn" type="submit">Se connecter</button>
+            <button class="log-reg-btn" type="submit" name="log-btn">Se connecter</button>
         </div>
 
         <div class="form-group-under d-flex justify-content-between">

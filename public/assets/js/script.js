@@ -21,25 +21,8 @@ right.addEventListener('click', function() {
    });
 });
 
-// MENU
 
-const btnMenu = document.querySelector(".btn-menu");
-const menuBox = document.querySelector(".menu-box");
-const croix = document.querySelector(".croix");
-
-btnMenu.addEventListener("click", function () {
-
-  menuBox.style.display = "block";
-  croix.style.display = "block";
-});
-
-croix.addEventListener("click", function () {
-  
-  menuBox.style.display = "none";
-  croix.style.display = "none";
-});
-
-//GESTION d'AJOUT
+//GESTION d'AJOUT DANS LE PANIER
 
 const addButtons = document.querySelectorAll('.btn-add-card');
 
@@ -49,14 +32,14 @@ const addButtons = document.querySelectorAll('.btn-add-card');
         const productStock = this.getAttribute('data-product-stock');
         
         if (productStock > 0) {
-            // Effectuez la requête GET vers la route appropriée
+            // requête GET vers la route appropriée
             fetch(`/add/${productId}`)
                 .then(response => {
                     if (response.status === 200) {
                         // L'ajout au panier a été effectué avec succès
                         alert('Produit ajouté au panier avec succès.');
                     } else {
-                        // Gérez d'autres erreurs ici si nécessaire
+                        // erreurs
                         alert('Une erreur est survenue lors de l\'ajout au panier.');
                     }
                 })
@@ -64,7 +47,7 @@ const addButtons = document.querySelectorAll('.btn-add-card');
                     alert('Une erreur est survenue lors de l\'ajout au panier.', error);
                 });
         } else {
-            // Le produit est épuisé en stock, affichez le message d'erreur
+            // le message d'erreur
             alert('Le produit est épuisé en stock.');
         }
     });

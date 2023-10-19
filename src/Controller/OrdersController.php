@@ -14,14 +14,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class OrdersController extends AbstractController
 {
-    #[Route('/my_order', name: 'app_orders')]
+    #[Route('/order', name: 'app_orders')]
     public function listOrders(OrdersRepository $ordersRepository, EntityManagerInterface $entityManager): Response
     {
         // commandes correspondantes à l'utilisateur connecté
         $user = $this->getUser();
 
         if(!$user){
-            return $this->redirectToRoute('app-login');
+            return $this->redirectToRoute('app_login');
         }
         // Récupérer toutes les commandes depuis la base de données
         $newOrders = $ordersRepository->findNonPayedOrders($user);

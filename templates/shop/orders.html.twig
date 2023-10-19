@@ -26,7 +26,10 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th colspan="4" class="text-center">№ de commande: {{ order.reference }} <span class="dateOrder">du {{ order.createdAt|date('Y-m-d')}}</span> <span class="priceOrder">Prix total: €</span></th>
+                                <th colspan="4" class="text-center">№ de commande: {{ order.reference }} 
+                                    <span class="dateOrder">du {{ order.createdAt|date('Y-m-d')}}</span>
+                                    <span class="priceOrder">Prix total: {{ order.totalPrice / 100 }} €</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,13 +55,19 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th colspan="4" class="text-center">№ de commande: {{ order.reference }} <span class="dateOrder">du {{ order.createdAt|date('Y-m-d')}}</span> <span class="priceOrder">Prix total: €</span></th>
+                                <th colspan="4" class="text-center">№ de commande: {{ order.reference }} 
+                                    <span class="dateOrder">du {{ order.createdAt|date('Y-m-d')}}</span> 
+                                    <span class="priceOrder">Prix total: {{ order.totalPrice / 100 }} €</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for detail in order.ordersDetails %}
                                 <tr>
-                                    <td><img src="{{ asset('upload/images/products/' ~ detail.product.image) }}" alt="" width="100" height="80"></td>
+                                    <td>
+                                        <img src="{{ asset('upload/images/products/' ~ detail.product.image) }}" 
+                                            alt="product-img" width="100" height="80">
+                                    </td>
                                     <td>{{ detail.product.name }}</td>
                                     <td>Prix unité: {{ (detail.product.price / 100)|number_format(2, ',', '.') }}€</td>
                                     <td>Qte: {{ detail.quantity }}</td>

@@ -8,9 +8,9 @@ app_index:
     path: /
     controller: App\Controller\IndexController::index
 
-app_category:
-    path: /category
-    controller: App\Controller\CategoryController::category
+# app_category:
+#     path: /category
+#     controller: App\Controller\CategoryController::category
 
 app_user_info:
     path: /user
@@ -23,3 +23,7 @@ app_orders:
 app_verify_email:
     path: '/verify/email'
     controller: 'App\Controller\RegistrationController::verifyUserEmail'
+
+error403:
+    path: /error403
+    controller: App\Controller\ErrorController::error403

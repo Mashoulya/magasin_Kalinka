@@ -5,12 +5,10 @@
 
 {% block body %}
 
-<div class="container-fluid">
-
   <div class="row justify-content-center">
             
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-        <ol class="breadcrumb mt-2">
+        <ol class="breadcrumb m-2">
           <li class="breadcrumb-item"><a href="{{ path('app_index') }}">Accueil</a></li>
           <li class="breadcrumb-item active" aria-current="page">Panier</li>
         </ol>
@@ -32,14 +30,14 @@
             <span class="quantity">{{ item.quantity }}</span>
             <a href="{{ path('add', {id: item.product.id}) }}"><img src="../assets/img/icon-plus-black.png" alt=""></a>
           </div> 
-          <span class="total-price-item"><strong>Prix total: {{ (item.quantity * item.product.price / 100)|number_format(2, ',', '.') }} €</strong></span>
+          <span class="total-price-item"><strong>Prix total: 
+                {{ (item.quantity * item.product.price / 100)|number_format(2, ',', '.') }} €</strong>
+          </span>
           <a class="delete-icon" href="{{ path('delete', {id: item.product.id}) }}"><img src="../assets/img/icon-delete.png" alt=""></a>
       </div>
 
       {% else %}
-
-        <p class="empty-cart">Votre panier est vide</p>
-
+        <p class="empty-cart m-3">Votre panier est vide</p>
       {% endfor %}
 
       {% for flash_message in app.flashes('order-success') %}
@@ -61,8 +59,8 @@
     </div>
 
   </div>
-</div>
 
+{# Boîte de dialogue #}
 
 <div id="confirm-dialog" style="display: none;">
   <p>Souhaitez-vous confirmer votre réservation ?</p>

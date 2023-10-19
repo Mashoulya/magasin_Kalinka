@@ -126,6 +126,7 @@ h1{
   }
   h1{
     margin-left: 220px;
+    font-size: 44px;
   } 
   .title2{
     font-size: 24px;
@@ -200,9 +201,15 @@ h1{
     width: 60%;
     margin: auto;
   }
+  .sayHi{
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width:500px){
+  .header{
+    height: 18vh;
+  }
   h1{
     display: none;
   }
@@ -220,7 +227,7 @@ h1{
   .search-icons{
     flex-direction:column-reverse;
     justify-content:space-between;
-    gap: 15px;   
+    gap: 10px;   
   }
   .search-bar {
     width: 70%;
@@ -271,7 +278,7 @@ h1{
   color: black;
 }
 /* MENU */
-.croix{
+.cancel{
   display: none;
 }
 .btn-menu{
@@ -331,7 +338,8 @@ h1{
 .menu-end{
   display: none;
 }
-h2{
+.menu-title > div,
+.menu-title-end > div{
   font-size: 18px;
   color: var(--color-white);
   text-align: center;
@@ -351,7 +359,7 @@ h2{
   .menu-box ul li{
     font-size: 14px;
   }
-  .croix{
+  .cancel{
     position: absolute;
     margin-left: 260px;
   }
@@ -362,14 +370,15 @@ h2{
     width: 220px;
     /* height: 420px; */
   }
-  .croix{
+  .cancel{
     position: absolute;
     margin-left: 240px;
   }
   .menu-end{
     display: block;
   }
-  h2{
+  .menu-title > div,
+  .menu-title-end > div{
     font-size: 14px;
   }
   .menu-box ul li{
@@ -834,6 +843,10 @@ footer{
   .cart-item p,  span{
     font-size: 12px;
   }
+  .empty-cart{
+    text-align: center;
+    font-size: 22px;
+  }
 }
 
 .total-price-cart{
@@ -891,8 +904,8 @@ footer{
 }
 .title-h6 {
   /* text-align: center; */
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 .title-h6 h6 {
   display: inline-block;
@@ -925,6 +938,11 @@ footer{
   border-bottom: 3rem solid transparent;
 }
 
+@media screen and (max-width: 540px){
+  .title-h6 h6{
+    font-size: 16px;
+  }
+}
 /* DONNEES */
 
 .info-group {
