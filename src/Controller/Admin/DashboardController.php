@@ -25,6 +25,10 @@ class DashboardController extends AbstractDashboardController
     }
 
     #[Route('/admin', name: 'admin')]
+    /**
+ * @Route("/admin/dashboard")
+ * @Security("is_granted('ROLE_ADMIN')")
+ */
     public function index(): Response
     {
         $url = $this->adminUrlGenerator

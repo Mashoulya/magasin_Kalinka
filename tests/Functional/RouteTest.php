@@ -21,6 +21,9 @@ class RouteTest extends WebTestCase
     {
         return [
             ['/'],
+            ['/category'],
+            ['/login'],
+            ['/register'],
         ];
     }
 }

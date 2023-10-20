@@ -1,16 +1,16 @@
 //INSCRIPTION
 
 // variables globales
-var firstNameInput = document.getElementById("registration_form_firstName");
-var lastNameInput = document.getElementById("registration_form_lastName");
-var phoneInput = document.getElementById("registration_form_tel");
-var emailInput = document.getElementById("registration_form_email");
-var passwordInput = document.getElementById("registration_form_plainPassword_first");
-var confirmPasswordInput = document.getElementById("registration_form_plainPassword_second");
+let firstNameInput = document.getElementById("registration_form_firstName");
+let lastNameInput = document.getElementById("registration_form_lastName");
+let phoneInput = document.getElementById("registration_form_tel");
+let emailInput = document.getElementById("registration_form_email");
+let passwordInput = document.getElementById("registration_form_plainPassword_first");
+let confirmPasswordInput = document.getElementById("registration_form_plainPassword_second");
 
-var nameRegex = /^[A-Za-z-]+$/;
-var phoneRegex = /^0[1-9][0-9]{8}$/;
-var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+let nameRegex = /^[A-Za-z-]+$/;
+let phoneRegex = /^0[1-9][0-9]{8}$/;
+let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 function validateFirstName(firstName) {
   if (!nameRegex.test(firstName)) {
@@ -62,7 +62,7 @@ function validatePassword(password) {
 }
 
 function validatePasswordConfirmation(confirmPassword) {
-  var password = passwordInput.value;
+  let password = passwordInput.value;
 
   if (confirmPassword !== password) {
     confirmPasswordInput.classList.add("error");
@@ -74,10 +74,10 @@ function validatePasswordConfirmation(confirmPassword) {
 }
 
 function validateForm() {
-  var phoneNumber = phoneInput.value;
-  var email = emailInput.value;
-  var password = passwordInput.value;
-  var confirmPassword = confirmPasswordInput.value;
+  let phoneNumber = phoneInput.value;
+  let email = emailInput.value;
+  let password = passwordInput.value;
+  let confirmPassword = confirmPasswordInput.value;
 
   // Appel des fonctions de validation correspondantes
   validatePhoneNumber(phoneNumber);
@@ -88,8 +88,8 @@ function validateForm() {
   if (!phoneRegex.test(phoneNumber) || !emailRegex.test(email) || password.length < 8 || !/[A-Z]/.test(password) || !/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password) || password !== confirmPassword) {
 
     //le formulaire est invalide!
-    var errorMessage = "Le formulaire contient des erreurs. Veuillez corriger les champs en rouge.";
-    var errorText = document.getElementById("error-message");
+    let errorMessage = "Le formulaire contient des erreurs. Veuillez corriger les champs en rouge.";
+    let errorText = document.getElementById("error-message");
     errorText.textContent = errorMessage;
     errorText.style.color = "red";
 

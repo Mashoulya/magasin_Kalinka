@@ -1,10 +1,10 @@
 function confirmReservation() {
-  var confirmDialog = document.getElementById("confirm-dialog");
+  let confirmDialog = document.getElementById("confirm-dialog");
   confirmDialog.style.display = "block";
 }
 
 function cancelReservation() {
-  var confirmDialog = document.getElementById("confirm-dialog");
+  let confirmDialog = document.getElementById("confirm-dialog");
   confirmDialog.style.display = "none";
 }
 
