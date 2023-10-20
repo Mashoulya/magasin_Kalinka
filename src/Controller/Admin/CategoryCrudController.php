@@ -31,6 +31,7 @@ class CategoryCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $em, $entityInstance): void
     {
         if (!$entityInstance instanceof Category)
+        
         return;
 
         $entityInstance->setCreateAt(new \DateTimeImmutable);
