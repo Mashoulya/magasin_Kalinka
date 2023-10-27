@@ -23,11 +23,11 @@ class OrdersDetailsCrudController extends AbstractCrudController
         return [
             IdField::new('id'),
             AssociationField::new('orders'),
-            TextField::new('product.name', 'Product Name'), // Affiche le nom du produit
-            ImageField::new('product.image', 'Product Image') // Affiche la photo du produit
-                ->setBasePath('/upload/images/products') // Spécifiez le chemin de base vers les images
-                ->setUploadDir('/public/upload/images/products') // Spécifiez le répertoire de téléchargement pour les images
-                ->setUploadedFileNamePattern('[randomhash].[extension]'), // Modifiez ce modèle en fonction de vos besoins
+            TextField::new('product.name', 'Product Name'),
+            ImageField::new('product.image', 'Product Image')
+                ->setBasePath('/upload/images/products')
+                ->setUploadDir('/public/upload/images/products')
+                ->setUploadedFileNamePattern('[randomhash].[extension]'),
             IntegerField::new('quantity'),
             NumberField::new('price'),
         ];

@@ -32,7 +32,6 @@ class OrdersCrudController extends AbstractCrudController
             MoneyField::new('totalPrice', 'Total price')->setCurrency('EUR'),
             AssociationField::new('user'),
             TextField::new('user.UserName', 'Name'),
-            //AssociationField::new('ordersDetails'),
             ArrayField::new('ordersDetails', 'Produits achetés')->OnlyOnDetail(),
         ];
     }
