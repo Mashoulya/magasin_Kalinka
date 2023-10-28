@@ -414,7 +414,7 @@ h3{
 .viewport{
   height: 100%;
   width: 90%;
-  margin: auto;  
+  margin: auto;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
@@ -759,7 +759,7 @@ footer{
 
 .empty-cart{
   font-size: 24px;
-  margin: 24px 0 200px 24px;
+  margin: 24px 0 100px 24px;
 }
 
 #confirm-dialog{
@@ -796,7 +796,7 @@ footer{
 .msg-order-success{
  width: auto;
  height: auto;
- background-color: var(--color-green-1);
+ background-color: rgba(255, 255, 255, 0.521);
  border-radius: 5px;
  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
@@ -823,6 +823,9 @@ footer{
   }  
   .delete-icon {
     grid-area: 2/5/3/6;
+  }
+  .empty-cart{
+    text-align: center;
   }
 }
 
@@ -859,7 +862,7 @@ footer{
 .total-price-cart{
   width: 340px;
   height: 160px;
-  margin: 0 auto;
+  margin: 50px auto;
   background-color: var(--color-white);
   border-radius: 5px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
