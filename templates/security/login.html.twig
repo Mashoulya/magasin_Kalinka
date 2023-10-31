@@ -18,18 +18,26 @@
 
     <h4 class="text-center">CONNEXION</h4>
 
+    {% for flash_message in app.flashes('danger') %}
+        <div class="text-center p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3 m-3">
+          <span>{{ flash_message }}</span>
+        </div>
+    {% endfor %}
+
+    {# Compte est activé #}
+
+    {% for flash_message in app.flashes('success') %}
+        <div class="text-center p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3 m-3">
+          <span>{{ flash_message }}</span>
+        </div>
+    {% endfor %}
+
     <p class="auth-msg text-center fw-bold mb-5">Après une authentification réussie, vous aurez la possibilité d'ajouter des produits au panier et de les réserver pour un paiement ultérieur en caisse en magasin.</p>
 
     <form class="login-register-form display-flex flex-column justify-content-between mb-5" method="post" action="{{ path('app_login') }}" name="login">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-
-        {# {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('security_logout') }}">Logout</a>
-            </div>
-        {% endif %} #}
 
         <div class="form-group">
             <label for="userEmail">Email</label>
