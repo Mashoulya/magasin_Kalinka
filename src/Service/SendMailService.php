@@ -25,7 +25,7 @@ class SendMailService{
             ->from($from)
             ->to($to)
             ->subject($subject)
-            ->htmlTemplate("registration/confirmation_email.html.twig")
+            ->htmlTemplate("email/$template.html.twig")
             ->context($context);
 
         // on envoie le mail

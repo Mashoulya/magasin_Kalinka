@@ -67,7 +67,7 @@ class RegistrationController extends AbstractController
                 'no-reply@monsite.net',
                 $user->getEmail(),
                 'Actiivation de votre compte sur le site e-commerce',
-                'register',
+                'confirmation_email',
                 compact('user', 'token')
             );
 
@@ -134,7 +134,7 @@ class RegistrationController extends AbstractController
             'no-reply@monsite.net',
             $user->getEmail(),
             'Actiivation de votre compte sur le site e-commerce',
-            'register',
+            'confirmation_email', //ou register
             compact('user', 'token')
         );
     }
