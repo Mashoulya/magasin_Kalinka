@@ -8,7 +8,7 @@ let emailInput = document.getElementById("registration_form_email");
 let passwordInput = document.getElementById("registration_form_plainPassword_first");
 let confirmPasswordInput = document.getElementById("registration_form_plainPassword_second");
 
-let nameRegex = /^[A-Za-z-]+$/;
+let nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\-]+$/;
 let phoneRegex = /^0[1-9][0-9]{8}$/;
 let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 

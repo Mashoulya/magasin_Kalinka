@@ -6,7 +6,7 @@ use App\Entity\OrdersDetails;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -29,7 +29,7 @@ class OrdersDetailsCrudController extends AbstractCrudController
                 ->setUploadDir('/public/upload/images/products')
                 ->setUploadedFileNamePattern('[randomhash].[extension]'),
             IntegerField::new('quantity'),
-            NumberField::new('price'),
+            MoneyField::new('price')->setCurrency('EUR'),
         ];
     }
     

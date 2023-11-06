@@ -118,6 +118,14 @@ class RegistrationFormType extends AbstractType
                         'min' => 8,
                         'max' => 4096,
                     ]),
+                    new Regex([
+                        'pattern' => '/[A-Z]/',
+                        'message' => 'Le mot de passe doit contenir au moins une lettre majuscule.',
+                    ]),
+                    new Regex([
+                        'pattern' => '/[!@#$%^&+=]/',
+                        'message' => 'Le mot de passe doit contenir au moins un symbole.',
+                    ]),
                 ],
             ])
         ;

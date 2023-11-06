@@ -729,6 +729,22 @@ footer{
  }
 }
 
+.btn-resetMdp1,
+.btn-resetMdp2{
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-resetMdp1{
+  background-color: var(--color-red);
+}
+
+.btn-resetMdp2{
+  background-color: var(--color-green);
+}
 
 /* PANIER */
 
