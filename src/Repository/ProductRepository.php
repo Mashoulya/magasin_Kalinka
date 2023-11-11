@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Product;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Model\SearchData;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Product>
@@ -46,13 +47,20 @@ class ProductRepository extends ServiceEntityRepository
         ->getResult();
    }
 
-//    public function findOneBySomeField($value): ?Product
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findBySearch(SearchData $searchData)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->orderBy('p.name', 'ASC');
+
+        // Utilisez la propriété correcte 'q' de SearchData
+        if ($searchData->q) {
+            $query->andWhere('p.name LIKE :search')
+                ->setParameter('search', '%' . $searchData->q . '%');
+        }
+
+        // Ajoutez d'autres conditions de recherche au besoin
+
+        return $query->getQuery()->getResult();
+    }
 }
+

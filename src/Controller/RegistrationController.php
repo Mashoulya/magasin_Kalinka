@@ -66,7 +66,7 @@ class RegistrationController extends AbstractController
             $mail->send(
                 'no-reply@monsite.net',
                 $user->getEmail(),
-                'Actiivation de votre compte sur le site e-commerce',
+                'Activation de votre compte sur le site e-commerce',
                 'confirmation_email',
                 compact('user', 'token')
             );

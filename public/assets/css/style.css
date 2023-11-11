@@ -99,7 +99,7 @@ h1{
   color: var(--color-grey); 
   font-style: italic;
 }
-.search-bar img{
+.search-bar button, .search-bar img {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -107,6 +107,10 @@ h1{
   right: 5px; 
   transform: translateY(-50%); 
   cursor: pointer;
+}
+.search-bar button{
+  border: none;
+  background-color: white;
 }
 
 .profil-icons img{

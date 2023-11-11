@@ -42,6 +42,19 @@
                                 </tr>
                             {% endfor %}
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="fw-bold">Statut :</td>
+                                <td>
+                                    {% if order.prepared %}
+                                        <span class="fw-bold fst-italic text-success">Prêt</span>
+                                    {% else %}
+                                        <span class="fw-bold fst-italic text-secondary">En attente</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 {% endfor %}
             </div>

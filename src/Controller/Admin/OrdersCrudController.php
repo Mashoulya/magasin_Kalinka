@@ -28,6 +28,7 @@ class OrdersCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('reference'),
             // DateTimeField::new('created_at')->setFormat('yyyy-MM-dd HH:mm:ss'),
+            BooleanField::new('prepared'),
             BooleanField::new('payed'),
             MoneyField::new('totalPrice', 'Total price')->setCurrency('EUR'),
             AssociationField::new('user'),

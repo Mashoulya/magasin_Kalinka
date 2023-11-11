@@ -35,6 +35,9 @@ class Orders
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private float $totalPrice = 0.0;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $prepared = null;
+
     public function __construct()
     {
         $this->ordersDetails = new ArrayCollection();
@@ -131,6 +134,18 @@ class Orders
     public function setTotalPrice(?float $totalPrice): static
     {
         $this->totalPrice = $totalPrice;
+
+        return $this;
+    }
+
+    public function getPrepared(): ?bool
+    {
+        return $this->prepared;
+    }
+
+    public function setPrepared(?bool $prepared): static
+    {
+        $this->prepared = $prepared;
 
         return $this;
     }

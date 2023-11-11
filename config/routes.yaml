@@ -27,3 +27,7 @@ app_verify_email:
 error403:
     path: /error403
     controller: App\Controller\ErrorController::error403
+
+app_search:
+    path: /search
+    controller: App\Controller\SearchController::search

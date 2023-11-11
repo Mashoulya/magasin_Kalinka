@@ -49,10 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="search-icons d-flex justify-content-between align-items-center">
               
           <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Rechercher">
-            <div>
-              <img src="../assets/img/icons8-search-60.png" alt="search">
-            </div>
+            {{ render(controller('App\\Controller\\SearchController::search')) }}
           </div>
               
           <div class="profil-icons d-flex">
