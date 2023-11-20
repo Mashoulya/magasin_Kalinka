@@ -24,6 +24,10 @@ class SearchController extends AbstractController
             $searchData->page = $request->query->getInt('page', 1);
             $products = $productRepository->findBySearch($searchData);
 
+            if (empty($products)) {
+                $this->addFlash('warning', 'Aucun résultat trouvé pour votre recherche.');
+            }
+
             return $this->render('product/search_results.html.twig', [
                 'searchForm' => $searchForm->createView(),
                 'products' => $products,

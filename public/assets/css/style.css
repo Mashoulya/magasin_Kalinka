@@ -351,6 +351,16 @@ h1{
   text-align: center;
 }
 
+.home-back{
+  text-decoration: none;
+  color: var(--color-green);
+  margin-right: 5px;
+}
+.home-back:hover{
+  color: var(--color-green);
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1464px) {
   .btn-menu{
     display: block;

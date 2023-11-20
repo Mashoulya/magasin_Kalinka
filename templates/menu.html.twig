@@ -5,6 +5,10 @@
             <div class="fw-bold">Produits</div>
           </div>
           <ul class="menu-list">
+            <li class="d-flex align-items-center">
+              <a href="" class="home-back">Accueil</a>
+              <img src="../assets/img/icon-home-green.png" width="20px" height="20px" alt="back-home">
+            </li> 
             {% for category in categories %}
                 <li><a class="menu-li" href="{{ path('app_category', {id: category.id}) }}">{{ category.name }}</a></li>
             {% endfor %}

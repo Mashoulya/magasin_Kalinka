@@ -8,10 +8,9 @@
     
     <div class="d-flex">
       {% include 'menu.html.twig' %}
-      
-      <div class="content-box"> 
-       <h3 class="text-center fw-bold m-3">{{ category.name }}</h3>     
-        {% include 'product/index.html.twig' %}
+      <div class="content-box">
+        <h3 class="text-center flex-grow-1 fw-bold m-3">{{ category.name }}</h3>
+      {% include 'product/index.html.twig' %}
       </div>
     </div>
 
