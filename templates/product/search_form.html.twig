@@ -1,7 +1,9 @@
 {{ form_start(searchForm, {'action': path('app_search'), 'attr': {'class': 'search-bar'}}) }}
-    {{ form_widget(searchForm.q, {'attr': {'class': 'search-input'}}) }}
-    <button type="submit">
-        <img src="{{ asset('assets/img/icons8-search-60.png') }}" alt="search">
-    </button>
+    <div class="search-input-container">
+        {{ form_widget(searchForm.q, {'attr': {'class': 'search-input'}}) }}
+        <button type="submit" class="search-btn">
+            <img src="{{ asset('assets/img/icons8-search-60.png') }}" class="search-img" alt="search">
+        </button>
+    </div>
 {{ form_end(searchForm) }}
     

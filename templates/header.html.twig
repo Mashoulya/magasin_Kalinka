@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="header-content d-flex flex-column justify-content-right">
 
-    <div class="header-search-icons d-flex">
+    <div class="header-search-icons d-flex mb-3">
       <div class="title2 me-auto align-self-center">Épicerie et saveurs des pays de l'est</div>
 
         <div class="search-icons d-flex justify-content-between align-items-center">
@@ -52,24 +52,23 @@ document.addEventListener("DOMContentLoaded", function () {
             {{ render(controller('App\\Controller\\SearchController::search')) }}
           </div>
               
-          <div class="profil-icons d-flex">
-            <div class="mobile-title me-auto">Kalinka</div>
-              <div class="sayHi align-self-center">
-                {% if app.user %}
-                <div>Bonjour, {{ app.user.getFirstName() }} !</div>
-                {% else %}
-                <div>Connectez-vous !</div>
-                {% endif %}
-              </div>
-              <div>
-                <img src="../assets/img/icons8-user-48.png" alt="user" class="user" id="prof-icon">
-              </div>
-              <div>
-                <a href="{{ path('shopping_cart') }}"><img src="../assets/img/icons8-shopping-cart-60.png" alt="shopping" class="shop-cart" id="prof-icon"></a>
-              </div>
+            <div class="profil-icons d-flex">
+              <div class="mobile-title me-3">Kalinka</div>
+                <div>
+                  {% if app.user %}
+                  <img src="../assets/img/icons-user-green.png" alt="user" class="user" id="prof-icon">
+                  {% else %}
+                  <img src="../assets/img/icons8-user-48.png" alt="user" class="user" id="prof-icon">
+                  {% endif %}
+                </div>
+                <div>
+                  <a href="{{ path('shopping_cart') }}"><img src="../assets/img/icons8-shopping-cart-60.png" alt="shopping" class="shop-cart" id="prof-icon"></a>
+                </div>
             </div>
-          </div>
+
+        </div>
     </div>
+    
   </div>
 
   <div class="log-reg align-items-center justify-content-center">

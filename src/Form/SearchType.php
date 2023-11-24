@@ -16,6 +16,7 @@ class SearchType extends AbstractType
             ->add('q', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Rechercher un produit',
+                    'class' => 'search-input',
                 ]
             ]);
     }
