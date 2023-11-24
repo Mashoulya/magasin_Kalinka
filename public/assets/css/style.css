@@ -143,7 +143,7 @@ h1{
     font-size: 20px;
   }
   .header-content{
-    margin: 0 0 10px 200px;
+    margin-left:200px;
   }
   .header-search-icons{
     display: flex;
@@ -163,7 +163,7 @@ h1{
     color: var(--color-white);
   }
   .header-content, h1{
-    margin: 10px 0 0 20px;
+    margin-left:20px;
   }
   .contact-item{
     display: none;
@@ -188,11 +188,11 @@ h1{
   }
   .search-icons{
     flex-direction:column-reverse;
-    justify-content:space-between;
     gap: 10px;   
   }
   .profil-icons{
     align-items: center;
+    justify-content: flex-start;
   }
   .profil-icons img{
     margin-left: 10px;
@@ -268,6 +268,7 @@ h1{
   color: var(--color-orange);
   font-weight: bold;
 }
+
 .menu-box ul,
 .menu-end ul{
   list-style: none;
@@ -307,7 +308,10 @@ h1{
   color: var(--color-green);
   font-weight: bold;
 }
-
+.menu-li.active {
+  color: var(--color-orange);
+  font-weight: bold;
+}
 @media screen and (max-width: 1464px) {
   .btn-menu{
     display: block;
