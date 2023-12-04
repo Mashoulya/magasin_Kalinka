@@ -19,34 +19,28 @@
 
             <div class="col-md-6 col-lg-3">
 
-                <form class="personal-info d-flex flex-column mb-5">
-
+               {{ form_start(userForm, {
+                'attr': {
+                    'class': 'personal-info d-flex flex-column mb-5',
+                }
+               }) }}
+    
                     <div class="info-group">
-                        <label for="first-name">Prénom:</label>
-                        <input type="text" id="first-name" name="first-name" value="{{ user.firstName }}">
+                        {{ form_row(userForm.firstName) }}
                     </div>
                         
                     <div class="info-group">
-                        <label for="last-name">Nom:</label>
-                        <input type="text" id="last-name" name="last-name" value="{{ user.lastName }}">
+                        {{ form_row(userForm.lastName) }}
                     </div>
              
                     <div class="info-group">
-                        <label for="phone">Tél:</label>
-                        <input type="text" id="phone" name="phone" value="{{ user.tel }}">
+                        {{ form_row(userForm.tel) }}
                     </div>
                   
-                    <div class="info-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" value="{{ user.email }}">
+                    <div class="btn-group">
+                        <button type="submit">Enregistrer</button>
                     </div>
-                  
-                    <div class="btn-group d-flex justify-content-between">
-                        <button type="submit">Changer mot de passe</button>
-                        <button type="submit">Sauvgarder</button>
-                    </div>
-
-                  </form>
+                  {{ form_end(userForm) }}
                           
             </div>
 

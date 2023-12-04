@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
     #[Route('/user', name: 'app_user_info')]
-    public function index(Security $security): Response
+    public function index(Request $request, Security $security): Response
     {
         // Récupérer l'utilisateur connecté
         $user = $security->getUser();
@@ -21,20 +22,25 @@ class UserController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Récupérer les données personnelles de l'utilisateur depuis la base de données
-        $firstName = $user->getFirstName();
-        $lastName = $user->getLastName();
-        $email = $user->getEmail();
-        $tel = $user->getTel();
+        // Créer le formulaire
+        $form = $this->createForm(UserType::class, $user);
 
-        // Afficher le formulaire avec les données personnelles dans les inputs
+        // Traiter le formulaire soumis
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Enregistrer les modifications dans la base de données
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+
+            // Rediriger vers la page d'informations de l'utilisateur
+            return $this->redirectToRoute('app_user_info');
+        }
+
+        // Afficher le formulaire dans le template
         return $this->render('user/personal_info.html.twig', [
             'controller_name' => 'UserController',
-            'user' => $user,
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-            'email' => $email,
-            'tel' => $tel,
+            'userForm' => $form->createView(),
         ]);
     }
 }

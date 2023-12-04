@@ -740,7 +740,6 @@ footer{
 
 .empty-cart{
   font-size: 24px;
-  margin: 24px 0 100px 24px;
 }
 
 #confirm-dialog{
@@ -777,13 +776,12 @@ footer{
 .msg-order-success{
  width: auto;
  height: auto;
- background-color: rgba(255, 255, 255, 0.521);
+ background-color: rgba(255, 255, 255, 0.897);
+ border: 2px solid var(--color-red);
  border-radius: 5px;
- box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 .msg-order-success p{
-  font-size: 20px;
-  font-style: italic;
+  font-size: 18px;
   padding: 5px;
 }
   
@@ -937,8 +935,6 @@ footer{
 /* DONNEES */
 
 .info-group {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 .info-group input{
@@ -952,10 +948,6 @@ footer{
   border-radius: 5px;
   padding: 10px;
   background-color: rgb(3, 145, 27);
-  color: var(--color-white);
-}
-.btn-group button:nth-child(2){
-  background-color: var(--color-red);
   color: var(--color-white);
 }
 
