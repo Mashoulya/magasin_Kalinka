@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 use App\Form\UserType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface; // Assurez-vous d'importer EntityManagerInterface
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
@@ -22,7 +22,6 @@ class UserController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        // Créer le formulaire
         $form = $this->createForm(UserType::class, $user);
 
         // Traiter le formulaire soumis
@@ -30,9 +29,8 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Enregistrer les modifications dans la base de données
-            $entityManager->flush(); // Utilisez l'injection de dépendances
+            $entityManager->flush();
 
-            // Rediriger vers la page d'informations de l'utilisateur
             return $this->redirectToRoute('app_user_info');
         }
 
