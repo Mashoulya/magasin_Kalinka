@@ -3,17 +3,17 @@
 namespace App\Controller;
 
 use App\Form\UserType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+use Doctrine\ORM\EntityManagerInterface; // Assurez-vous d'importer EntityManagerInterface
 
 class UserController extends AbstractController
 {
     #[Route('/user', name: 'app_user_info')]
-    public function index(Request $request, Security $security): Response
+    public function index(Request $request, Security $security, EntityManagerInterface $entityManager): Response
     {
         // Récupérer l'utilisateur connecté
         $user = $security->getUser();
@@ -30,8 +30,7 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Enregistrer les modifications dans la base de données
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->flush();
+            $entityManager->flush(); // Utilisez l'injection de dépendances
 
             // Rediriger vers la page d'informations de l'utilisateur
             return $this->redirectToRoute('app_user_info');
