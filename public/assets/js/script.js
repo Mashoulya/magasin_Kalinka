@@ -53,7 +53,3 @@ const addButtons = document.querySelectorAll('.btn-add-card');
     });
 });
 
-
-
-
-
