@@ -534,6 +534,10 @@ h3{
   text-align: center;
 }
 
+.lightbox-content img{
+  width: 100%;
+}
+
 .close{
   color: white;
   font-size: 35px;
