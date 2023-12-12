@@ -105,5 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
         const imgUrl = images[currentImgIndex].src;
         displayImage(imgUrl);
     }
-    window.closeLightbox = closeLightbox; // Expose la fonction pour la fermeture à l'échelle globale
+    window.closeLightbox = closeLightbox;
   });
