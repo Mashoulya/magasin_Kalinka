@@ -240,7 +240,6 @@ h1{
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
-
 .menu-box{
   width: 280px;
   background-color: var(--color-white);
@@ -294,7 +293,9 @@ h1{
   color: var(--color-white);
   text-align: center;
 }
-
+.home{
+  border-bottom: 1px solid var(--color-green-1);
+}
 .home-back{
   text-decoration: none;
   color: var(--color-green);
@@ -535,7 +536,8 @@ h3{
 }
 
 .lightbox-content img{
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .close{

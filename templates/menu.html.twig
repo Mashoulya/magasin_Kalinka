@@ -2,13 +2,13 @@
   <div class="col-md-3">
     <nav class="menu-box">
           <div class="menu-title d-flex align-items-center justify-content-center">
-            <div class="fw-bold">Produits</div>
+            <div class="fw-bold">Menu</div>
           </div>
           <ul class="menu-list">
-            <li class="d-flex align-items-center">
+            <li class="home d-flex align-items-center">
               <a href="{{ path('app_index') }}" class="home-back">Accueil</a>
               <img src="../assets/img/icon-home-green.png" width="20px" height="20px" alt="back-home">
-            </li> 
+            </li>
             {% for category in categories %}
                 <li><a class="menu-li" href="{{ path('app_category', {id: category.id}) }}">{{ category.name }}</a></li>
             {% endfor %}
