@@ -225,6 +225,12 @@ h1{
 .breadcrumb-item a{
   color: black;
 }
+
+.nav-bar a{
+  color: white;
+  padding: 0 10px 10px 0;
+}
+
 /* MENU */
 .cancel{
   display: none;
