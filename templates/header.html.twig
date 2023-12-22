@@ -1,32 +1,3 @@
-<script>
- 
-document.addEventListener("DOMContentLoaded", function () {
-  const profileIcon = document.querySelector(".user");
-  const logReg = document.querySelector(".log-reg");
-
-  function hideHints() {
-    logReg.style.display = "none";
-  }
-
-  profileIcon.addEventListener("click", function (event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement au document
-    logReg.style.display = "flex"; // Affiche le bloc avant la connexion
-  });
-
-  document.addEventListener("click", function () {
-    hideHints();
-  });
-
-  // Gérer le clic sur les tooltips pour éviter leur fermeture lorsqu'ils sont cliqués
-  logReg.addEventListener("click", function (event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement au document
-  });
-});
-
-
-</script>
-
-
 <div class="header">
   <div class="contact-info d-flex justify-content-end">
     <span class="contact-item">
@@ -68,13 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         </div>
     </div>
-
-    <div class="d-flex nav-bar">
-      <a href="{{ path('app_index') }}">Accueil</a>
-      <a href="">A propos</a>
-      <a href="">Contacts</a>
-    </div>
-        
+ 
   </div>
 
   <div class="log-reg align-items-center justify-content-center">
@@ -100,4 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
       {% endif %}
   </div>
 
-</div> 
+</div>
+
+ <div class="d-flex nav-bar">
+    <a href="{{ path('app_index') }}">Accueil</a>
+    <a href="">A propos</a>
+    <a href="">Payment</a>
+  </div>
+
+{% block javascripts %}
+  <script src="{{ asset('assets/js/header.js') }}"></script>
+{% endblock %}

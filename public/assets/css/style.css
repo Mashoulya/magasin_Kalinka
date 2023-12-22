@@ -220,14 +220,21 @@ h1{
 
 .log-reg{
   display: none;
+  z-index: 200;
 }
 
 .breadcrumb-item a{
   color: black;
 }
 
+.nav-bar{
+  background-color: #8af5d1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .nav-bar a{
-  color: white;
+  color: black;
   padding: 0 10px 10px 0;
 }
 
