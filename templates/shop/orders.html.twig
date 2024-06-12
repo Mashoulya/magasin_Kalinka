@@ -15,55 +15,41 @@
             
         <h3 class="text-center fw-bold mb-5">Mes commandes</h3>
              
-        <div class="row">
-        
-            <div class="title-h6">
-                <h6>Nouvelles commandes</h6>
-            </div>
-
-            <div class="col-md-6">
                 {% for order in newOrders %}
                     <table class="table">
                         <thead>
                             <tr>
-                                <th colspan="4" class="text-center">№ de commande: {{ order.reference }} 
-                                    <span class="dateOrder">du {{ order.createdAt|date('Y-m-d')}}</span>
-                                    <span class="priceOrder">Prix total: {{ order.totalPrice / 100 }} €</span>
-                                </th>
+                                <th>№ de commande </th>
+                                <th>Date</th>
+                                <th>Prix total</th>
+                                <th>Statut</th>
+                                <th>Facture</th>
+                                <th>Détail</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for detail in order.ordersDetails %}
                                 <tr>
-                                    <td><img src="{{ asset('upload/images/products/' ~ detail.product.image) }}" alt="" width="100" height="80"></td>
-                                    <td>{{ detail.product.name }}</td>
-                                    <td>Prix unité: {{ (detail.product.price / 100)|number_format(2, ',', '.') }}€</td>
-                                    <td>Qte: {{ detail.quantity }}</td>
+                                    <td> {{ order.reference }} </td>
+                                    <td> {{ order.createdAt|date('Y-m-d')}} </td>
+                                    <td> {{ order.totalPrice / 100 }} €</td>
+                                    <td>
+                                        {% if order.prepared %}
+                                        <span class="fw-bold fst-italic text-success">Prêt</span>
+                                        {% else %}
+                                        <span class="fw-bold fst-italic text-secondary">En attente</span>
+                                        {% endif %}
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                         <tfoot>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td class="fw-bold">Statut :</td>
-                                <td>
-                                    {% if order.prepared %}
-                                        <span class="fw-bold fst-italic text-success">Prêt</span>
-                                    {% else %}
-                                        <span class="fw-bold fst-italic text-secondary">En attente</span>
-                                    {% endif %}
-                                </td>
-                            </tr>
+                          
                         </tfoot>
                     </table>
                 {% endfor %}
-            </div>
-
-            <div class="title-h6">
-                <h6>Commandes payées</h6>
-            </div>
-
-            <div class="col-md-6">
+{# 
+            
                 {% for order in payedOrders %}
                     <table class="table">
                         <thead>
@@ -89,8 +75,7 @@
                         </tbody>
                     </table>
                 {% endfor %}
-            </div>
-        </div>
+             #}
        
     </div>
 {% endblock %}
