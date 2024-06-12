@@ -1,0 +1,25 @@
+<table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom du produit</th>
+                                <th>Prix unité</th>
+                                <th>Qte</th>
+                                <th>Sous-total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for detail in order.ordersDetails %}
+                                <tr>
+                                    <td> {{ detail.product.name }} </td>
+                                    <td> {{ (detail.product.price / 100)|number_format(2, ',', '.') }}€ </td>
+                                    <td> {{ detail.quantity }}</td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                          
+                        </tfoot>
+</table> 
+               
+            

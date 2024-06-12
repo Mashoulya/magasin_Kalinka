@@ -28,12 +28,11 @@ class OrdersController extends AbstractController
         $newOrders = $ordersRepository->findNonPayedOrders($user);
         $payedOrders = $ordersRepository->findPayedOrders($user);
 
-        $orders = $payedOrders;
+        // $orders = $payedOrders;
 
         return $this->render('shop/orders.html.twig', [
-            'orders' => $orders,
+            'orders' => $payedOrders,
             'newOrders' => $newOrders,
-            'payedOrders' => $payedOrders,
         ]);
     }
     
@@ -93,6 +92,23 @@ class OrdersController extends AbstractController
         $this->addFlash('order-success', 'Votre commande a été validée avec succès. Vous pouvez consulter les détails de votre commande depuis votre page "Mes commandes".');
 
         return $this->redirectToRoute('shopping_cart');
+    }
+
+    #[Route('/order/{id}', name: 'order_details')]
+    public function orderDetails($id, OrdersRepository $ordersRepository): Response
+    {
+        // Récupérer la commande à afficher en fonction de son ID
+        $order = $ordersRepository->find($id);
+
+        // Vérifier si la commande existe
+        if (!$order) {
+            throw $this->createNotFoundException('Commande non trouvée');
+        }
+
+        // Afficher les détails de la commande dans le template order_details.html.twig
+        return $this->render('shop/order_details.html.twig', [
+            'order' => $order,
+        ]);
     }
     
 }
