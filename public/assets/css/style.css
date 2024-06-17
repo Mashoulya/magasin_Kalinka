@@ -924,13 +924,19 @@ th:last-child{
 /* DONNEES */
 
 .info-group {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: right; 
 }
+.info-group label {
+  margin-right: 10px;
+}
+
 .info-group input{
   outline: none;
   border: none;
-  border-radius: 5px;
-  padding: 10px;
+  background-color: var(--color-gold);
 }
 .btn-group button{
   border: none;

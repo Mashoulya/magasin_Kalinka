@@ -50,6 +50,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $resetToken;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $civility = null;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -222,6 +225,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $order->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCivility(): ?string
+    {
+        return $this->civility;
+    }
+
+    public function setCivility(?string $civility): static
+    {
+        $this->civility = $civility;
 
         return $this;
     }
