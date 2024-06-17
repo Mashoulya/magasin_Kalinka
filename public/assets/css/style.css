@@ -924,19 +924,26 @@ th:last-child{
 /* DONNEES */
 
 .info-group {
-  margin-bottom: 5px;
   display: flex;
+  justify-content: space-between; /* Aligne les éléments de chaque groupe avec un espace entre eux */
   align-items: center;
-  justify-content: right; 
-}
-.info-group label {
-  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
-.info-group input{
-  outline: none;
+.info-group label {
+  flex: 0 0 120px;
+  text-align: right;
+}
+
+.info-group select,
+.info-group input[type="text"] {
   border: none;
+  outline: none;
   background-color: var(--color-gold);
+  margin-right: auto;
+}
+.info-group input{
+  padding-left: 3px;
 }
 .btn-group button{
   border: none;

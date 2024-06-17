@@ -6,19 +6,20 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('civility', TextType::class, [
+            ->add('civility', ChoiceType::class, [
             'label' => 'Civilité:',
-            // 'choices' => [
-            //     'M.' => 'Monsieur',
-            //     'Mme' => 'Madame',
-            //     'Mlle' => 'Mademoiselle',
-            // ],
+            'choices' => [
+                'M.' => 'Monsieur',
+                'Mme' => 'Madame',
+                'Mlle' => 'Mademoiselle',
+            ],
             ])
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom:',

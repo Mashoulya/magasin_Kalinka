@@ -25,19 +25,23 @@
                 }
                }) }}
                     <div class="info-group">
-                        {{ form_row(userForm.civility) }}
+                        {{ form_label(userForm.civility, null, {'label_attr': {'class': 'text-right'}}) }}
+                        {{ form_widget(userForm.civility) }}
                     </div>
                     
                     <div class="info-group">
-                        {{ form_row(userForm.firstName) }}
+                        {{ form_label(userForm.firstName, null, {'label_attr': {'class': 'text-right'}}) }}
+                        {{ form_widget(userForm.firstName) }}
                     </div>
                         
                     <div class="info-group">
-                        {{ form_row(userForm.lastName) }}
+                        {{ form_label(userForm.lastName, null, {'label_attr': {'class': 'text-right'}}) }}
+                        {{ form_widget(userForm.lastName) }}
                     </div>
              
                     <div class="info-group">
-                        {{ form_row(userForm.tel) }}
+                        {{ form_label(userForm.tel, null, {'label_attr': {'class': 'text-right'}}) }}
+                        {{ form_widget(userForm.tel) }}
                     </div>
                   
                     <div class="btn-group">
