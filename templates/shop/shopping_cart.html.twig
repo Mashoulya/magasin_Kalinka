@@ -21,7 +21,6 @@
       <div class="cart-item m-3">
         <img class="img-item" src="{{ asset('upload/images/products/' ~ item.product.image) }}" alt="product1">
           <div class="product-info">
-            <p>{{ item.product.description|raw }}</p>
             <span>Prix unité: {{ (item.product.price / 100)|number_format(2, ',', '.')}} €</span>
           </div>
           <div class="quantity-item d-flex align-items-center">

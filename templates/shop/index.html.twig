@@ -25,7 +25,6 @@
             <img src="{{ asset('upload/images/products/' ~ product.image) }}" alt="" class="card-img-top img-fluid">
             <div class="product-details text-center">
               <span class="prod-name">{{ product.name }}</span>
-              <span class="prod-descr">{{ product.description|raw }}</span>
             </div>
             <div class="product-price text-center fw-bold">{{ (product.price / 100)|number_format(2, ',', '.') }} €</div>
               {% if product.stock == 0 %}

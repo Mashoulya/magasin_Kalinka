@@ -6,7 +6,7 @@
           </div>
           <ul class="menu-list">
             {% for category in categories %}
-                <li><a class="menu-li" href="{{ path('app_category', {id: category.id}) }}">{{ category.name }}</a></li>
+                <li><a class="menu-li" href="{{ path('app_category', {id: category.id}) }}" onclick="setActiveMenu(this)" data-category-id="{{ category.id }}">{{ category.name }}</a></li>
             {% endfor %}
           </ul>
           <div class="menu-end">
