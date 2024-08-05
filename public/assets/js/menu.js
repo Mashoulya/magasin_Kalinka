@@ -14,7 +14,7 @@ cancel.addEventListener("click", function () {
 });
 
 
-// lien actif
+// LIEN ACTIF
 
 document.addEventListener('DOMContentLoaded', () => {
   // Récupérer l'ID de la catégorie stocké dans le local storage
